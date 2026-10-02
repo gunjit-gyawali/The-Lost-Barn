@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://c45sc4jpf2307"]
+
+[ext_resource type="Script" uid="uid://cs6cctv80mjlm" path="res://scripts/main_menu.gd" id="1_8ln24"]
+[ext_resource type="Texture2D" uid="uid://do2d54hodk68e" path="res://assets/Images/main_menu_bg.png" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://bp46lcglgopv3" path="res://assets/Fonts/HollyBerryPop-LVxvE.ttf" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://d07g64igey1qx" path="res://assets/Images/Mountain_image.png" id="3_bqqt6"]
+[ext_resource type="FontFile" uid="uid://iijd8ubopyay" path="res://assets/Fonts/GhostMortarDemo-0vXRR.ttf" id="4_wu84c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vue75"]
+texture = ExtResource("1_l6cm7")
+
+[sub_resource type="Gradient" id="Gradient_l6cm7"]
+offsets = PackedFloat32Array(0.045, 0.215, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.7529412, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wu84c"]
+gradient = SubResource("Gradient_l6cm7")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0.02364865)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
+texture = SubResource("GradientTexture2D_wu84c")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5y6hd"]
+font = ExtResource("2_bqqt6")
+font_size = 60
+outline_size = 3
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bqqt6"]
+texture = ExtResource("3_bqqt6")
+
+[sub_resource type="Gradient" id="Gradient_wu84c"]
+offsets = PackedFloat32Array(0.335, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8ln24"]
+gradient = SubResource("Gradient_wu84c")
+fill_from = Vector2(1, 0.037162162)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wu84c"]
+texture = SubResource("GradientTexture2D_8ln24")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw88p"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Main Menu" type="Node2D" unique_id=857062145]
+script = ExtResource("1_8ln24")
+
+[node name="bg_image" type="Panel" parent="." unique_id=1427002244]
+offset_left = -14.0
+offset_top = -12.0
+offset_right = 1153.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vue75")
+
+[node name="Dark" type="Panel" parent="." unique_id=797170959]
+offset_left = 497.0
+offset_top = -38.0
+offset_right = 1176.206
+offset_bottom = 678.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
+
+[node name="Dark3" type="Panel" parent="." unique_id=782596974]
+offset_left = 982.0
+offset_top = -56.0
+offset_right = 1661.206
+offset_bottom = 660.0
+rotation = 0.9160916
+theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
+
+[node name="Dark2" type="Panel" parent="." unique_id=753637718]
+offset_left = 513.0
+offset_top = 675.0
+offset_right = 1192.206
+offset_bottom = 1391.0
+rotation = 3.1411161
+theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
+
+[node name="Label" type="Label" parent="." unique_id=514469140]
+offset_left = 667.0
+offset_top = 80.0
+offset_right = 1113.0
+offset_bottom = 269.0
+text = "    T H E 
+ L o s t   B a r n"
+label_settings = SubResource("LabelSettings_5y6hd")
+
+[node name="Mountain_image" type="Panel" parent="." unique_id=181304740]
+offset_left = 778.0
+offset_top = -7.0
+offset_right = 1179.0
+offset_bottom = 208.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_bqqt6")
+
+[node name="Panel" type="Panel" parent="." unique_id=1227040268]
+offset_left = 737.0
+offset_top = 334.0
+offset_right = 1449.0
+offset_bottom = 394.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wu84c")
+
+[node name="Panel2" type="Panel" parent="." unique_id=950196104]
+offset_left = 737.0
+offset_top = 420.0
+offset_right = 1449.0
+offset_bottom = 480.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wu84c")
+
+[node name="Panel3" type="Panel" parent="." unique_id=924943180]
+offset_left = 737.0
+offset_top = 510.0
+offset_right = 1449.0
+offset_bottom = 570.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wu84c")
+
+[node name="start" type="Button" parent="." unique_id=1143212333]
+offset_left = 821.0
+offset_top = 325.0
+offset_right = 1027.0
+offset_bottom = 401.0
+theme_override_colors/font_color = Color(0.8723498, 0.7935467, 0.81073666, 1)
+theme_override_colors/font_pressed_color = Color(0.8117647, 0.5764706, 0.1882353, 1)
+theme_override_colors/font_hover_color = Color(0.8117647, 0.5058824, 0.23137255, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_yw88p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yw88p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yw88p")
+text = "Start"
+
+[node name="settings" type="Button" parent="." unique_id=743437350]
+offset_left = 811.0
+offset_top = 411.0
+offset_right = 1054.0
+offset_bottom = 487.0
+theme_override_colors/font_color = Color(0.87058824, 0.7921569, 0.8117647, 1)
+theme_override_colors/font_pressed_color = Color(0.8117647, 0.5764706, 0.1882353, 1)
+theme_override_colors/font_hover_color = Color(0.8117647, 0.5058824, 0.23137255, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_yw88p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yw88p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yw88p")
+text = "Settings"
+
+[node name="quit" type="Button" parent="." unique_id=1604161201]
+offset_left = 848.0
+offset_top = 502.0
+offset_right = 1012.0
+offset_bottom = 578.0
+theme_override_colors/font_color = Color(0.87058824, 0.7921569, 0.8117647, 1)
+theme_override_colors/font_pressed_color = Color(0.8117647, 0.5764706, 0.1882353, 1)
+theme_override_colors/font_hover_color = Color(0.8117647, 0.5058824, 0.23137255, 1)
+theme_override_fonts/font = ExtResource("4_wu84c")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_yw88p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yw88p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yw88p")
+text = "Quit"
+
+[connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
