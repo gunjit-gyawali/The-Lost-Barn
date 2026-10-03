@@ -420,26 +420,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7sjgg"]
-radius = 6.0
-height = 22.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_7sjgg"]
+radius = 5.0
 
 [node name="player" type="CharacterBody2D" unique_id=57410078]
+y_sort_enabled = true
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=432840074]
-position = Vector2(388.5, 244.50003)
+position = Vector2(176.50005, 86.500046)
 scale = Vector2(1.1562518, 1.1562518)
 sprite_frames = SubResource("SpriteFrames_u8vuu")
 animation = &"front_idle"
 autoplay = "front_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1140310257]
-position = Vector2(388, 243)
-shape = SubResource("CapsuleShape2D_7sjgg")
+position = Vector2(176, 91)
+shape = SubResource("CircleShape2D_7sjgg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1713367170]
-position = Vector2(388, 243)
+position = Vector2(176, 84)
 zoom = Vector2(3.2, 3.2)
 limit_left = 0
 limit_top = 0
