@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dy8s603ejmdv5"]
+
+[ext_resource type="Texture2D" uid="uid://5yrti45kpk3a" path="res://assets/tileset/Cute_Fantasy_Free/Animals/Chicken/Chicken.png" id="1_8lku0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p2n8"]
+atlas = ExtResource("1_8lku0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlgje"]
+atlas = ExtResource("1_8lku0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m37eu"]
+atlas = ExtResource("1_8lku0")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dxkl"]
+atlas = ExtResource("1_8lku0")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tg4m"]
+atlas = ExtResource("1_8lku0")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4axs6"]
+atlas = ExtResource("1_8lku0")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sry7q"]
+atlas = ExtResource("1_8lku0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ap4w"]
+atlas = ExtResource("1_8lku0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yw88p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p2n8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlgje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m37eu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dxkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tg4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4axs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sry7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ap4w")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1505701217]
+position = Vector2(170, 170)
+scale = Vector2(11.625, 11.625)
+sprite_frames = SubResource("SpriteFrames_yw88p")
+autoplay = "default"
+frame_progress = 0.22037286
