@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dbu61ohbrhcw4"]
+
+[ext_resource type="Texture2D" uid="uid://colnb87ql1p4c" path="res://assets/Images/9.png" id="1_3nsf6"]
+[ext_resource type="Script" uid="uid://cgvehp2uc5bbq" path="res://scripts/ruine_ui.gd" id="1_ab68i"]
+[ext_resource type="FontFile" uid="uid://bp46lcglgopv3" path="res://assets/Fonts/HollyBerryPop-LVxvE.ttf" id="3_xc0vd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yw88p"]
+font = ExtResource("3_xc0vd")
+font_size = 30
+
+[node name="ruine_ui" type="Node2D" unique_id=583874277]
+script = ExtResource("1_ab68i")
+
+[node name="TextureRect" type="Sprite2D" parent="." unique_id=335774727]
+position = Vector2(96.99999, 46.999996)
+scale = Vector2(0.08276368, 0.08276368)
+texture = ExtResource("1_3nsf6")
+
+[node name="Label" type="Label" parent="." unique_id=1005785581]
+offset_left = 119.0
+offset_top = 31.0
+offset_right = 137.0
+offset_bottom = 60.0
+text = "0"
+label_settings = SubResource("LabelSettings_yw88p")

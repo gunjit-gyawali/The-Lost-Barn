@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 bg_music="*uid://duqq1g1ykb6nu"
 Global="*uid://cl3auta0clauv"
+EventController="*uid://b7vqg3aa4lxlf"
+GameController="*uid://juyi2xx2hm84"
 
 [display]
 
@@ -28,6 +30,10 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[global_group]
+
+player=""
 
 [input]
 

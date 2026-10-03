@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bsss51crgdf5f"]
+
+[ext_resource type="Script" uid="uid://da25fo3jm3mcd" path="res://scripts/ruine.gd" id="1_k1td8"]
+[ext_resource type="Texture2D" uid="uid://colnb87ql1p4c" path="res://assets/Images/9.png" id="1_ywko3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yw88p"]
+radius = 8.0
+
+[node name="ruine" type="Node2D" unique_id=1161343689]
+script = ExtResource("1_k1td8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1728757144]
+position = Vector2(40.999992, 24.999985)
+scale = Vector2(0.0390625, 0.0390625)
+texture = ExtResource("1_ywko3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1147626784]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1425208433]
+position = Vector2(41, 25)
+shape = SubResource("CircleShape2D_yw88p")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
