@@ -124,8 +124,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cfg4s"]
-radius = 12.0
-height = 42.0
+radius = 18.0
+height = 48.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_cfg4s"]
 font = ExtResource("2_httt1")
@@ -141,7 +141,7 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.06777822
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1419196635]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1419196635 groups=["zombie"]]
 position = Vector2(26, 12)
 shape = SubResource("CapsuleShape2D_cfg4s")
 

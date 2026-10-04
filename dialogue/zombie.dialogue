@@ -1,0 +1,141 @@
+~ main
+
+if Global.talked_with_zombie == false:
+	if true:
+		Zombie: Wait...
+		Zombie: You are going deeper into the jungle, aren't you?
+
+		Player: Yes.
+		Player: I'm looking for my cow.
+
+		Zombie: Then you need to know the truth about this place.
+
+		Player: What truth?
+
+		Zombie: The deeper you go into the jungle...
+		Zombie: The more dangerous it becomes.
+
+		Player: What is waiting for me?
+
+		Zombie: The One-Eyed Demon has an army hidden deep within the jungle.
+		Zombie: They are not like the monsters you have fought before.
+		Zombie: They are his strongest soldiers.
+
+		Player: How many of them are there?
+
+		Zombie: I don't know.
+		Zombie: I stopped counting a long time ago.
+		Zombie: Every time one of them falls...
+		Zombie: Another monster takes its place.
+
+		Player: Then I'll defeat them all.
+
+		Zombie: You are brave.
+		Zombie: But bravery alone won't be enough.
+
+		Player: What should I do?
+
+		Zombie: Keep moving deeper into the jungle.
+		Zombie: Fight every monster that stands in your way.
+		Zombie: Search the ruins, caves, and forgotten paths.
+		Zombie: The Demon has hidden his power throughout this place.
+
+		- What will I find in the deep jungle?
+			Zombie: Ancient ruins...
+			Zombie: Dangerous monsters...
+			Zombie: And secrets the Demon doesn't want you to discover.
+			=> warning
+
+		- Why is the Demon hiding his army here?
+			Zombie: He is protecting the path to his fortress.
+			Zombie: He knows someone is coming for him.
+			Zombie: And he will do everything he can to stop you.
+			=> warning
+
+		- What should I be afraid of?
+			Zombie: The monsters are not your greatest danger.
+			Zombie: The deeper you go...
+			Zombie: The more the Demon will notice you.
+			Zombie: When he realizes what you are trying to do...
+			Zombie: He will send his strongest army after you.
+			=> warning
+
+
+	~ warning
+
+	Player: And what about my cow?
+
+	Zombie: She is still beyond the Red Gate.
+	Zombie: The Demon took her there for a reason.
+
+	Player: What reason?
+
+	Zombie: I don't know.
+	Zombie: But I know this...
+	Zombie: He would not keep her alive without a purpose.
+
+	Player: Then I have to reach the Red Gate.
+
+	Zombie: Yes.
+	Zombie: But the path to the Red Gate is protected by the Demon's army.
+
+	Player: I'll make my way through them.
+
+	Zombie: Then don't turn back.
+	Zombie: Keep going deeper.
+	Zombie: The jungle will become darker...
+	Zombie: The monsters will become stronger...
+	Zombie: But eventually, you will reach the Red Gate.
+
+	Player: And beyond it?
+
+	Zombie: The One-Eyed Demon.
+	Zombie: His fortress.
+	Zombie: And your cow.
+
+	Player: I'll rescue her.
+
+	Zombie: I hope you do.
+	Zombie: Because if anyone can defeat that monster...
+	Zombie: It might be you.
+
+	Player: Why are you helping me?
+
+	Zombie: Because the One-Eyed Demon betrayed me.
+	Zombie: He turned me into this creature.
+	Zombie: I cannot forgive him.
+
+	Player: Then we have the same enemy.
+
+	Zombie: Exactly.
+	Zombie: Go into the jungle.
+	Zombie: Become stronger.
+	Zombie: Fight his army.
+	Zombie: And when you finally reach the Red Gate...
+
+	Zombie: Kill the One-Eyed Demon.
+
+	Player: I will.
+
+	Zombie: Then go.
+	Zombie: Your journey is only beginning.
+
+	set Global.talked_with_zombie = true
+	=> END
+
+
+if Global.talked_with_zombie == true:
+
+	Zombie: Keep going deeper into the jungle.
+	Zombie: The Demon's army is waiting for you.
+	Zombie: Don't let them stop you.
+
+	Player: I'll find my cow.
+
+	Zombie: Then keep fighting.
+	Zombie: I'll be waiting here when you return.
+
+	=> END
+
+
+=> END

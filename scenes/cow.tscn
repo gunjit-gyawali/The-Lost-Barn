@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://byiql2nnqwxbg"]
+
+[ext_resource type="Texture2D" uid="uid://dkgo8fpuhp3ju" path="res://assets/tileset/Cute_Fantasy_Free/Animals/Cow/Cow.png" id="1_fgglk"]
+[ext_resource type="FontFile" uid="uid://7w8wcwio3lw1" path="res://assets/Fonts/HollyBerryPop-PVxdZ.otf" id="2_cairq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cairq"]
+atlas = ExtResource("1_fgglk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gly4w"]
+atlas = ExtResource("1_fgglk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfg4s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cairq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gly4w")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i08kd"]
+radius = 19.0
+height = 38.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_cfg4s"]
+font = ExtResource("2_cairq")
+font_size = 18
+
+[node name="cow" type="CharacterBody2D" unique_id=1524895664 groups=["cow"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1560742359]
+position = Vector2(26, 25)
+scale = Vector2(1.15625, 1.15625)
+sprite_frames = SubResource("SpriteFrames_cfg4s")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.83004785
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1887975712]
+position = Vector2(27, 25)
+shape = SubResource("CapsuleShape2D_i08kd")
+
+[node name="Label" type="Label" parent="." unique_id=1030402444]
+offset_left = 7.0
+offset_top = -5.0
+offset_right = 51.0
+offset_bottom = 19.0
+text = "TALK"
+label_settings = SubResource("LabelSettings_cfg4s")

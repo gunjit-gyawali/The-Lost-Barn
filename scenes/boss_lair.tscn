@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dbu61ohbrhcw4" path="res://scenes/ruine_ui.tscn" id="15_0s07w"]
 [ext_resource type="PackedScene" uid="uid://dsr3dlwyveibw" path="res://scenes/player.tscn" id="16_hrakl"]
 [ext_resource type="PackedScene" uid="uid://51wwd7gmcktq" path="res://scenes/pause_menu.tscn" id="17_uigp5"]
+[ext_resource type="PackedScene" uid="uid://comehakw4p14x" path="res://scenes/boss.tscn" id="18_xqj7y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykep5"]
 texture = ExtResource("1_ykep5")
@@ -414,3 +415,6 @@ position = Vector2(-100, 146)
 
 [node name="pause_menu" parent="pause" unique_id=1825941401 instance=ExtResource("17_uigp5")]
 visible = false
+
+[node name="boss" parent="." unique_id=806205332 instance=ExtResource("18_xqj7y")]
+position = Vector2(374, 145)

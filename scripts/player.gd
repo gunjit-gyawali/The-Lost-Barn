@@ -9,6 +9,7 @@ var attack_ip = false
 const speed = 100
 
 var chicken_in_range = false
+var zombie_in_range = false
 
 var current_direction = "none"
 var last_direction = "front"
@@ -27,6 +28,9 @@ func _physics_process(_delta: float) -> void:
 		if Input.is_action_just_pressed("interact"):
 			DialogueManager.show_dialogue_balloon(load("res://dialogue/main.dialogue"), "main")
 			return
+	if zombie_in_range == true:
+		if Input.is_action_just_pressed("interact"):
+			DialogueManager.show_dialogue_balloon(load("res://dialogue/zombie.dialogue"), "main")
 	
 	if health <= 0:
 		player_alive = false
@@ -132,7 +136,9 @@ func _on_player_hitbox_body_entered(body: Node2D) -> void:
 		enemy_inattack_range = true
 	if body.is_in_group("chicken"):
 		chicken_in_range = true
-
+	if body.is_in_group("zombie"):
+		zombie_in_range = true
+		
  
 func _on_player_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("enemy"):

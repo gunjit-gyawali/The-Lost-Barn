@@ -395,8 +395,8 @@ layer_3/tile_data = PackedInt32Array(1245198, 10, 0, 786449, 10, 0, 720909, 10, 
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1324398321]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=295206603]
-polygon = PackedVector2Array(0, 0, 1155, -32, 1150, 653, -1, 648, 0, 0, -1, -1, -40, 687, 1182, 718, 1198, 19, -3, -11)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=1285927586]
+polygon = PackedVector2Array(-51, -22, -84, 712, 1233, 714, 1263, -87, -49, -82, 50, -2, 1152, 0, 1150, 655, -4, 657, 6, -20)
 
 [node name="Label" type="Label" parent="." unique_id=1936093354]
 offset_left = 932.0
@@ -409,7 +409,7 @@ label_settings = SubResource("LabelSettings_yw88p")
 [node name="Area2D" type="Area2D" parent="." unique_id=1044080383]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=688495239]
-position = Vector2(1162, 89)
+position = Vector2(1155, 88)
 shape = SubResource("RectangleShape2D_yw88p")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=146552308]
