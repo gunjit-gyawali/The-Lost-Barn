@@ -464,9 +464,10 @@ wait_time = 0.9
 
 [node name="regen_timer" type="Timer" parent="." unique_id=830491419]
 wait_time = 2.6599999999999997
+autostart = true
 
 [node name="healthbar" type="ProgressBar" parent="." unique_id=1823842552]
-modulate = Color(0.88031465, 0.116664596, 3.85046e-07, 1)
+modulate = Color(1, 0.11764706, 0, 1)
 offset_left = 152.0
 offset_top = 68.0
 offset_right = 200.0

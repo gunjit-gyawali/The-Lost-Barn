@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://dm4uly0ct07wd"]
+
+[ext_resource type="Script" uid="uid://bmxawj0p54r4u" path="res://scripts/end_menu.gd" id="1_by8p7"]
+[ext_resource type="Texture2D" uid="uid://dvu1a3eir6hjs" path="res://assets/Images/end_menu.png" id="2_iubf0"]
+[ext_resource type="Texture2D" uid="uid://c4fjuwlw14261" path="res://assets/Images/Untitled design (8).png" id="3_yxxtk"]
+[ext_resource type="Texture2D" uid="uid://d07g64igey1qx" path="res://assets/Images/Mountain_image.png" id="4_wwn2p"]
+[ext_resource type="FontFile" uid="uid://7w8wcwio3lw1" path="res://assets/Fonts/HollyBerryPop-PVxdZ.otf" id="5_y0tgy"]
+[ext_resource type="FontFile" uid="uid://d4lrcv8m6pixr" path="res://assets/Fonts/Mileast.otf" id="6_dj235"]
+[ext_resource type="Texture2D" uid="uid://cwxudcp5x70uy" path="res://assets/Images/arrow.png" id="7_t4ho2"]
+[ext_resource type="FontFile" uid="uid://desawmtyi1blf" path="res://assets/Fonts/SimpleMinimalist-3lV3z.otf" id="8_l8tid"]
+[ext_resource type="AudioStream" uid="uid://1kd74ecjvhqk" path="res://assets/music/pressed.mp3" id="9_anb04"]
+[ext_resource type="AudioStream" uid="uid://d0liex6l6kxql" path="res://assets/music/hover.mp3" id="10_lbgia"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vncnc"]
+texture = ExtResource("2_iubf0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0q3h"]
+bg_color = Color(0, 0, 0, 0.2509804)
+
+[sub_resource type="Gradient" id="Gradient_867n1"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.22745098)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iubw1"]
+gradient = SubResource("Gradient_867n1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vwdbn"]
+texture = SubResource("GradientTexture2D_iubw1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7luo0"]
+texture = ExtResource("3_yxxtk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dnjol"]
+texture = ExtResource("4_wwn2p")
+
+[sub_resource type="LabelSettings" id="LabelSettings_35kpt"]
+font = ExtResource("5_y0tgy")
+font_size = 70
+font_color = Color(0.9607843, 0.9098039, 0.8156863, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xy40u"]
+font = ExtResource("6_dj235")
+font_size = 22
+font_color = Color(0.9607843, 0.9098039, 0.8156863, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pd8d3"]
+texture = ExtResource("7_t4ho2")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6twnt"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="you_died" type="Node2D" unique_id=231428983]
+script = ExtResource("1_by8p7")
+
+[node name="Panel" type="Panel" parent="." unique_id=1164733989]
+offset_right = 1155.0
+offset_bottom = 651.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vncnc")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1569003367]
+offset_left = -152.0
+offset_top = -55.0
+offset_right = 1355.0
+offset_bottom = 700.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_f0q3h")
+
+[node name="Panel8" type="Panel" parent="." unique_id=566247294]
+offset_left = -178.0
+offset_top = -44.0
+offset_right = 1338.0
+offset_bottom = 1411.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vwdbn")
+
+[node name="Panel3" type="Panel" parent="." unique_id=21938268]
+offset_left = 258.0
+offset_top = 208.0
+offset_right = 921.93616
+offset_bottom = 524.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7luo0")
+
+[node name="Mountain_image" type="Panel" parent="." unique_id=1955761153]
+offset_left = 392.0
+offset_top = 4.0
+offset_right = 793.0
+offset_bottom = 219.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dnjol")
+
+[node name="Label" type="Label" parent="." unique_id=2139172628]
+offset_left = 444.0
+offset_top = 170.0
+offset_right = 752.0
+offset_bottom = 238.0
+text = "You Died"
+label_settings = SubResource("LabelSettings_35kpt")
+
+[node name="Label2" type="Label" parent="." unique_id=1918993273]
+offset_left = 445.0
+offset_top = 242.0
+offset_right = 724.0
+offset_bottom = 299.0
+text = "You could not save your cow
+               What a shame"
+label_settings = SubResource("LabelSettings_xy40u")
+
+[node name="Panel4" type="Panel" parent="." unique_id=1942765493]
+offset_left = 609.0
+offset_top = 64.0
+offset_right = 1092.0
+offset_bottom = 350.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_pd8d3")
+
+[node name="Panel5" type="Panel" parent="." unique_id=799200362]
+offset_left = 591.0
+offset_top = 347.0
+offset_right = 1074.0
+offset_bottom = 633.0
+rotation = 3.1415927
+theme_override_styles/panel = SubResource("StyleBoxTexture_pd8d3")
+
+[node name="Panel6" type="Panel" parent="." unique_id=2039798723]
+offset_left = 258.0
+offset_top = 280.0
+offset_right = 921.93616
+offset_bottom = 596.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7luo0")
+
+[node name="Panel7" type="Panel" parent="." unique_id=2134139115]
+offset_left = 258.0
+offset_top = 352.0
+offset_right = 921.93616
+offset_bottom = 668.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7luo0")
+
+[node name="play_again" type="Button" parent="." unique_id=1921525906]
+offset_left = 512.0
+offset_top = 349.0
+offset_right = 665.0
+offset_bottom = 380.0
+theme_override_colors/font_color = Color(0.79128724, 0.68926114, 0.5158381, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.87488043, 0.6291911, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_l8tid")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_6twnt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6twnt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6twnt")
+text = "P l a y  A g a i n"
+
+[node name="Quit" type="Button" parent="." unique_id=343314388]
+offset_left = 530.0
+offset_top = 492.0
+offset_right = 635.0
+offset_bottom = 523.0
+theme_override_colors/font_color = Color(0.7921569, 0.6901961, 0.5176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.8745098, 0.627451, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_l8tid")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_6twnt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6twnt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6twnt")
+text = "Q u i t"
+
+[node name="Main_menu" type="Button" parent="." unique_id=1195461253]
+offset_left = 514.0
+offset_top = 421.0
+offset_right = 660.0
+offset_bottom = 452.0
+theme_override_colors/font_color = Color(0.7921569, 0.6901961, 0.5176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.8745098, 0.627451, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_l8tid")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_6twnt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6twnt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6twnt")
+text = "M a i n  M e n u"
+
+[node name="pressed" type="AudioStreamPlayer" parent="." unique_id=571203163]
+stream = ExtResource("9_anb04")
+
+[node name="hover" type="AudioStreamPlayer" parent="." unique_id=39965209]
+stream = ExtResource("10_lbgia")
+
+[connection signal="mouse_entered" from="play_again" to="." method="_on_play_again_mouse_entered"]
+[connection signal="pressed" from="play_again" to="." method="_on_play_again_pressed"]
+[connection signal="mouse_entered" from="Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="Main_menu" to="." method="_on_main_menu_mouse_entered"]
+[connection signal="pressed" from="Main_menu" to="." method="_on_main_menu_pressed"]

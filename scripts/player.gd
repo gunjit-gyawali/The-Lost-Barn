@@ -25,7 +25,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if chicken_in_range == true:
 		if Input.is_action_just_pressed("interact"):
-			DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "main")
+			DialogueManager.show_dialogue_balloon(load("res://dialogue/main.dialogue"), "main")
 			return
 	
 	if health <= 0:
@@ -133,7 +133,7 @@ func _on_player_hitbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("chicken"):
 		chicken_in_range = true
 
-
+ 
 func _on_player_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("enemy"):
 		enemy_inattack_range = false
@@ -188,7 +188,7 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
-
+	
 func _on_regen_timer_timeout() -> void:
 	
 	if health < 400:

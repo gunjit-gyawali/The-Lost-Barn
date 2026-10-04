@@ -2,5 +2,5 @@ extends Node2D
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and Global.stone_recived_by_chicken == true:
 		get_tree().change_scene_to_file("res://scenes/2_nd_world.tscn")

@@ -5,6 +5,8 @@
 [ext_resource type="FontFile" uid="uid://7w8wcwio3lw1" path="res://assets/Fonts/HollyBerryPop-PVxdZ.otf" id="2_myx47"]
 [ext_resource type="Texture2D" uid="uid://cwxudcp5x70uy" path="res://assets/Images/arrow.png" id="3_kukqi"]
 [ext_resource type="FontFile" uid="uid://bp46lcglgopv3" path="res://assets/Fonts/HollyBerryPop-LVxvE.ttf" id="6_v4r4p"]
+[ext_resource type="Texture2D" uid="uid://5yrti45kpk3a" path="res://assets/tileset/Cute_Fantasy_Free/Animals/Chicken/Chicken.png" id="7_88e76"]
+[ext_resource type="Texture2D" uid="uid://carkppcbpijkk" path="res://assets/tileset/Cute_Fantasy_Free/Player/Player.png" id="8_knqa7"]
 [ext_resource type="AudioStream" uid="uid://1kd74ecjvhqk" path="res://assets/music/pressed.mp3" id="9_knqa7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5d2l8"]
@@ -165,6 +167,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="pressed" type="AudioStreamPlayer" parent="." unique_id=99489164]
 stream = ExtResource("9_knqa7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=468280557]
+position = Vector2(854.99994, 370.00003)
+scale = Vector2(10.964285, 11.517857)
+texture = ExtResource("7_88e76")
+region_enabled = true
+region_rect = Rect2(0, 0, 35.664032, 28.921955)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1905122389]
+position = Vector2(321, 357.00003)
+scale = Vector2(10.964285, 11.517857)
+texture = ExtResource("8_knqa7")
+region_enabled = true
+region_rect = Rect2(0, 0, 35.664032, 28.921955)
 
 [connection signal="mouse_entered" from="resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]

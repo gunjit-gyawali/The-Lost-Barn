@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dbu61ohbrhcw4" path="res://scenes/ruine_ui.tscn" id="18_m37eu"]
 [ext_resource type="PackedScene" uid="uid://51wwd7gmcktq" path="res://scenes/pause_menu.tscn" id="19_6dxkl"]
 [ext_resource type="PackedScene" uid="uid://dy8s603ejmdv5" path="res://scenes/chicken.tscn" id="20_4tg4m"]
+[ext_resource type="PackedScene" uid="uid://bsss51crgdf5f" path="res://scenes/ruine.tscn" id="21_4axs6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xlgje"]
 texture = ExtResource("1_sdtrm")
@@ -414,10 +415,10 @@ shape = SubResource("RectangleShape2D_yw88p")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=146552308]
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1962395019]
-offset_left = 72.0
-offset_top = -116.99999
-offset_right = 219.56018
-offset_bottom = 266.95087
+offset_left = 83.42508
+offset_top = -132.57553
+offset_right = 273.09375
+offset_bottom = 270.69193
 rotation = 0.6328745
 theme_override_styles/panel = SubResource("StyleBoxTexture_yw88p")
 
@@ -433,6 +434,9 @@ position = Vector2(-87, 96)
 visible = false
 
 [node name="chicken" parent="." unique_id=23828093 instance=ExtResource("20_4tg4m")]
-position = Vector2(968, 246)
+position = Vector2(981, 252)
+
+[node name="ruine" parent="." unique_id=1161343689 instance=ExtResource("21_4axs6")]
+position = Vector2(977, 373)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
