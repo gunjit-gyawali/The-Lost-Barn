@@ -437,6 +437,6 @@ visible = false
 position = Vector2(981, 252)
 
 [node name="ruine" parent="." unique_id=1161343689 instance=ExtResource("21_4axs6")]
-position = Vector2(977, 373)
+position = Vector2(976, 358)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

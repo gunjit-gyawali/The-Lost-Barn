@@ -380,11 +380,6 @@ layer_2/y_sort_enabled = true
 layer_3/name = "trees"
 layer_3/y_sort_enabled = true
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1953385633]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=755839475]
-polygon = PackedVector2Array(0, 0, 1151, -43, 1152, 648, -1, 648, 0, 0, -1, -1, -40, 687, 1182, 718, 1198, 19, 0, -1)
-
 [node name="Area2D" type="Area2D" parent="." unique_id=2114694196]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1054222103]
@@ -395,10 +390,10 @@ shape = SubResource("RectangleShape2D_lbpsr")
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1575104958]
 
 [node name="Panel" type="Panel" parent="CanvasLayer2" unique_id=739738235]
-offset_left = 72.0
-offset_top = -116.99999
-offset_right = 219.56018
-offset_bottom = 266.95087
+offset_left = 77.0
+offset_top = -126.0
+offset_right = 224.56018
+offset_bottom = 257.95087
 rotation = 0.6328745
 theme_override_styles/panel = SubResource("StyleBoxTexture_yqend")
 metadata/_edit_use_anchors_ = true
@@ -413,3 +408,8 @@ position = Vector2(-100, 146)
 
 [node name="pause_menu" parent="pause" unique_id=1825941401 instance=ExtResource("17_ln2n2")]
 visible = false
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1047987460]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=893887933]
+polygon = PackedVector2Array(0, 0, 1155, -32, 1150, 653, -1, 648, 0, 0, -1, -1, -40, 687, 1182, 718, 1198, 19, -3, -11)

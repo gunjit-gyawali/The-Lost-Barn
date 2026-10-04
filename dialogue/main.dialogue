@@ -96,7 +96,7 @@ if Global.talked_with_chicken == true and GameController.total_coins != 1:
 	=> END
  
 if GameController.total_coins == 1:
-	set Global.stone_recived_by_chicken == true
+	set Global.stone_recived_by_chicken = true
 	Chicken: Thanks Now you can go to the forest!
 	=> END
 	

@@ -22,6 +22,7 @@ Global="*uid://cl3auta0clauv"
 EventController="*uid://b7vqg3aa4lxlf"
 GameController="*uid://juyi2xx2hm84"
 DialogueManager="*uid://c3rodes2l3gxb"
+MusicCheck="*uid://d3lqekowei3jc"
 
 [dialogue_manager]
 
