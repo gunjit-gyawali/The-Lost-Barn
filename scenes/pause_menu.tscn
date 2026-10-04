@@ -4,10 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c4fjuwlw14261" path="res://assets/Images/Untitled design (8).png" id="1_n87rw"]
 [ext_resource type="FontFile" uid="uid://7w8wcwio3lw1" path="res://assets/Fonts/HollyBerryPop-PVxdZ.otf" id="2_myx47"]
 [ext_resource type="Texture2D" uid="uid://cwxudcp5x70uy" path="res://assets/Images/arrow.png" id="3_kukqi"]
-[ext_resource type="PackedScene" uid="uid://dsr3dlwyveibw" path="res://scenes/player.tscn" id="4_5d2l8"]
-[ext_resource type="PackedScene" uid="uid://bp1gpo02ge3xr" path="res://scenes/enemy.tscn" id="5_7l7mv"]
 [ext_resource type="FontFile" uid="uid://bp46lcglgopv3" path="res://assets/Fonts/HollyBerryPop-LVxvE.ttf" id="6_v4r4p"]
-[ext_resource type="AudioStream" uid="uid://d0liex6l6kxql" path="res://assets/music/hover.mp3" id="8_88e76"]
 [ext_resource type="AudioStream" uid="uid://1kd74ecjvhqk" path="res://assets/music/pressed.mp3" id="9_knqa7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5d2l8"]
@@ -37,10 +34,13 @@ font_size = 60
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4r4p"]
 bg_color = Color(5.160841e-06, 5.160843e-06, 5.1608363e-06, 0)
 
-[node name="pause_menu" type="Node2D" unique_id=1261266203]
+[node name="pause_menu" type="Control" unique_id=1825941401]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_1s2dm")
 
 [node name="Panel5" type="Panel" parent="." unique_id=974506682]
+layout_mode = 0
 offset_left = 592.0
 offset_top = 287.0
 offset_right = 1075.0
@@ -50,6 +50,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_5d2l8")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="." unique_id=877312173]
+layout_mode = 0
 offset_left = -548.0
 offset_top = 203.0
 offset_right = 1402.0
@@ -57,6 +58,7 @@ offset_bottom = 658.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_v4r4p")
 
 [node name="Panel4" type="Panel" parent="." unique_id=1968860538]
+layout_mode = 0
 offset_left = 553.0
 offset_top = 4.0
 offset_right = 1036.0
@@ -65,6 +67,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_5d2l8")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel3" type="Panel" parent="." unique_id=503198456]
+layout_mode = 0
 offset_left = 99.0
 offset_top = 53.0
 offset_right = 1060.97
@@ -73,6 +76,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yw88p")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel7" type="Panel" parent="." unique_id=2131195709]
+layout_mode = 0
 offset_left = 237.0
 offset_top = 309.0
 offset_right = 900.93616
@@ -81,6 +85,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_myx47")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel9" type="Panel" parent="." unique_id=1745482233]
+layout_mode = 0
 offset_left = 237.0
 offset_top = 149.0
 offset_right = 900.93616
@@ -89,6 +94,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_myx47")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel8" type="Panel" parent="." unique_id=271681976]
+layout_mode = 0
 offset_left = 237.0
 offset_top = 229.0
 offset_right = 900.93616
@@ -97,6 +103,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_myx47")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=338320972]
+layout_mode = 0
 offset_left = 463.0
 offset_top = 119.0
 offset_right = 682.0
@@ -105,27 +112,8 @@ text = "Paused"
 label_settings = SubResource("LabelSettings_n87rw")
 metadata/_edit_use_anchors_ = true
 
-[node name="player" parent="." unique_id=57410078 instance=ExtResource("4_5d2l8")]
-
-[node name="AnimatedSprite2D" parent="player" index="0" unique_id=432840074]
-position = Vector2(288.00003, 380)
-scale = Vector2(5.4687486, 5.4687486)
-
-[node name="Camera2D" parent="player" index="2" unique_id=1713367170]
-enabled = false
-limit_left = 2
-limit_top = 2
-limit_right = 1154
-limit_bottom = 650
-
-[node name="enemy" parent="." unique_id=1020187104 instance=ExtResource("5_7l7mv")]
-
-[node name="AnimatedSprite2D" parent="enemy" index="0" unique_id=1591857109]
-position = Vector2(844, 374)
-scale = Vector2(0.29513896, 0.29513896)
-frame_progress = 0.68949497
-
 [node name="resume" type="Button" parent="." unique_id=1150072459]
+layout_mode = 0
 offset_left = 497.0
 offset_top = 288.0
 offset_right = 636.0
@@ -142,6 +130,7 @@ text = "R e s u m e"
 metadata/_edit_use_anchors_ = true
 
 [node name="Music" type="Button" parent="." unique_id=82542089]
+layout_mode = 0
 offset_left = 498.0
 offset_top = 366.0
 offset_right = 637.0
@@ -158,6 +147,7 @@ text = "M u s i c"
 metadata/_edit_use_anchors_ = true
 
 [node name="exit" type="Button" parent="." unique_id=728400699]
+layout_mode = 0
 offset_left = 497.0
 offset_top = 447.0
 offset_right = 636.0
@@ -176,15 +166,9 @@ metadata/_edit_use_anchors_ = true
 [node name="pressed" type="AudioStreamPlayer" parent="." unique_id=99489164]
 stream = ExtResource("9_knqa7")
 
-[node name="hover" type="AudioStreamPlayer" parent="." unique_id=2012426574]
-stream = ExtResource("8_88e76")
-
 [connection signal="mouse_entered" from="resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
 [connection signal="mouse_entered" from="Music" to="." method="_on_music_mouse_entered"]
 [connection signal="pressed" from="Music" to="." method="_on_music_pressed"]
 [connection signal="mouse_entered" from="exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
-
-[editable path="player"]
-[editable path="enemy"]

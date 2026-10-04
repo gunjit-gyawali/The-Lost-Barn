@@ -125,7 +125,10 @@ animations = [{
 [node name="enemy" type="CharacterBody2D" unique_id=1020187104]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1591857109]
+position = Vector2(-146, 322)
+scale = Vector2(0.31666666, 0.41111112)
 sprite_frames = SubResource("SpriteFrames_8tegq")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.8905826
+frame = 7
+frame_progress = 0.7518198

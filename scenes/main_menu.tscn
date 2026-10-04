@@ -50,10 +50,13 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="Main Menu" type="Node2D" unique_id=857062145]
+[node name="Main Menu" type="Control" unique_id=2312803]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_8ln24")
 
 [node name="bg_image" type="Panel" parent="." unique_id=1427002244]
+layout_mode = 0
 offset_left = -14.0
 offset_top = -12.0
 offset_right = 1153.0
@@ -61,6 +64,7 @@ offset_bottom = 649.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_vue75")
 
 [node name="Dark" type="Panel" parent="." unique_id=797170959]
+layout_mode = 0
 offset_left = 497.0
 offset_top = -38.0
 offset_right = 1176.206
@@ -68,6 +72,7 @@ offset_bottom = 678.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
 
 [node name="Dark3" type="Panel" parent="." unique_id=782596974]
+layout_mode = 0
 offset_left = 982.0
 offset_top = -56.0
 offset_right = 1661.206
@@ -76,6 +81,7 @@ rotation = 0.9160916
 theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
 
 [node name="Dark2" type="Panel" parent="." unique_id=753637718]
+layout_mode = 0
 offset_left = 513.0
 offset_top = 675.0
 offset_right = 1192.206
@@ -84,6 +90,7 @@ rotation = 3.1411161
 theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
 
 [node name="Label" type="Label" parent="." unique_id=514469140]
+layout_mode = 0
 offset_left = 667.0
 offset_top = 80.0
 offset_right = 1113.0
@@ -93,6 +100,7 @@ text = "    T H E
 label_settings = SubResource("LabelSettings_5y6hd")
 
 [node name="Mountain_image" type="Panel" parent="." unique_id=181304740]
+layout_mode = 0
 offset_left = 778.0
 offset_top = -7.0
 offset_right = 1179.0
@@ -100,6 +108,7 @@ offset_bottom = 208.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_bqqt6")
 
 [node name="Panel" type="Panel" parent="." unique_id=1227040268]
+layout_mode = 0
 offset_left = 729.0
 offset_top = 326.0
 offset_right = 1441.0
@@ -107,6 +116,7 @@ offset_bottom = 401.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_wu84c")
 
 [node name="Panel2" type="Panel" parent="." unique_id=950196104]
+layout_mode = 0
 offset_left = 729.0
 offset_top = 415.0
 offset_right = 1441.0
@@ -114,6 +124,7 @@ offset_bottom = 492.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_wu84c")
 
 [node name="Panel3" type="Panel" parent="." unique_id=924943180]
+layout_mode = 0
 offset_left = 729.0
 offset_top = 503.0
 offset_right = 1441.0
@@ -121,6 +132,7 @@ offset_bottom = 587.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_wu84c")
 
 [node name="start" type="Button" parent="." unique_id=1143212333]
+layout_mode = 0
 offset_left = 821.0
 offset_top = 325.0
 offset_right = 1027.0
@@ -136,6 +148,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_yw88p")
 text = "Start"
 
 [node name="settings" type="Button" parent="." unique_id=743437350]
+layout_mode = 0
 offset_left = 811.0
 offset_top = 411.0
 offset_right = 1054.0
@@ -151,6 +164,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_yw88p")
 text = "Settings"
 
 [node name="quit" type="Button" parent="." unique_id=1604161201]
+layout_mode = 0
 offset_left = 848.0
 offset_top = 502.0
 offset_right = 1012.0

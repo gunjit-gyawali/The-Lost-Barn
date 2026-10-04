@@ -8,6 +8,8 @@ var attack_ip = false
 
 const speed = 100
 
+var chicken_in_range = false
+
 var current_direction = "none"
 var last_direction = "front"
 
@@ -19,6 +21,18 @@ func _physics_process(_delta: float) -> void:
 	_player_movement()
 	enemy_attack()
 	attack()
+	update_health()
+	
+	if chicken_in_range == true:
+		if Input.is_action_just_pressed("interact"):
+			DialogueManager.show_example_dialogue_balloon(load("res://dialogue/main.dialogue"), "main")
+			return
+	
+	if health <= 0:
+		player_alive = false
+		health = 0
+		print("player died")
+		get_tree().change_scene_to_file("res://scenes/you_died.tscn")
 
 
 func _player_movement() -> void:
@@ -116,11 +130,15 @@ func player():
 func _on_player_hitbox_body_entered(body: Node2D) -> void:
 	if body.has_method("enemy"):
 		enemy_inattack_range = true
+	if body.is_in_group("chicken"):
+		chicken_in_range = true
 
 
 func _on_player_hitbox_body_exited(body: Node2D) -> void:
 	if body.has_method("enemy"):
 		enemy_inattack_range = false
+	if body.is_in_group("chicken"):
+		chicken_in_range = false
 
 
 func enemy_attack() -> void:
@@ -128,7 +146,6 @@ func enemy_attack() -> void:
 		health -= 20
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
-		print(health)
 
 
 func _on_attack_cooldown_timeout() -> void:
@@ -156,4 +173,27 @@ func attack() -> void:
 			$AnimatedSprite2D.play("back_attack")
 
 		$deal_attack_timer.start()
-		
+
+
+func _on_deal_attack_timer_timeout() -> void:
+	$deal_attack_timer.stop()
+	Global.current_player_attack = false
+	attack_ip = false
+
+
+func update_health():
+	var healthbar = $healthbar
+	healthbar.value = health
+	if health == 400:
+		healthbar.visible = false
+	else:
+		healthbar.visible = true
+
+func _on_regen_timer_timeout() -> void:
+	
+	if health < 400:
+		health = health + 20
+		if health > 400:
+			health = 400
+	if health <= 0:
+		health = 0

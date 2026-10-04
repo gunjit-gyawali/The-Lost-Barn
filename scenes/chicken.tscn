@@ -2,73 +2,36 @@
 
 [ext_resource type="Texture2D" uid="uid://5yrti45kpk3a" path="res://assets/tileset/Cute_Fantasy_Free/Animals/Chicken/Chicken.png" id="1_8lku0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7p2n8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lku0"]
 atlas = ExtResource("1_8lku0")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xlgje"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yv3s"]
 atlas = ExtResource("1_8lku0")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m37eu"]
-atlas = ExtResource("1_8lku0")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6dxkl"]
-atlas = ExtResource("1_8lku0")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4tg4m"]
-atlas = ExtResource("1_8lku0")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4axs6"]
-atlas = ExtResource("1_8lku0")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sry7q"]
-atlas = ExtResource("1_8lku0")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ap4w"]
-atlas = ExtResource("1_8lku0")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yw88p"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_i08kd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7p2n8")
+"texture": SubResource("AtlasTexture_8lku0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xlgje")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m37eu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6dxkl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4tg4m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4axs6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sry7q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5ap4w")
+"texture": SubResource("AtlasTexture_1yv3s")
 }],
 "loop": 1,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 2.0
 }]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1505701217]
-position = Vector2(170, 170)
-scale = Vector2(11.625, 11.625)
-sprite_frames = SubResource("SpriteFrames_yw88p")
-autoplay = "default"
-frame_progress = 0.22037286
+[sub_resource type="CircleShape2D" id="CircleShape2D_i08kd"]
+radius = 9.0
+
+[node name="chicken" type="CharacterBody2D" unique_id=1995665730 groups=["chicken"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=164243439]
+sprite_frames = SubResource("SpriteFrames_i08kd")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1769497147]
+shape = SubResource("CircleShape2D_i08kd")

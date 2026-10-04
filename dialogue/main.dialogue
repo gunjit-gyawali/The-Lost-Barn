@@ -1,0 +1,96 @@
+~ main
+
+if Global.talked_with_chicken == false:
+	if true:
+		Chicken: Cluck! Cluck! You're finally here!
+
+		Player: What happened?
+
+		Chicken: Your cow is missing!
+		Chicken: She went into the jungle and never came back.
+
+		Player: Why did she go into the jungle?
+
+		- Did you see where she went?
+			Chicken: Yes! I saw her walking toward the jungle.
+			Chicken: She followed a strange glowing light.
+			=> jungle_info
+
+		- Is she still alive?
+			Chicken: I don't know...
+			Chicken: But I heard her mooing deep inside the jungle.
+			Chicken: You have to find her!
+			=> jungle_info
+
+		- Was she alone?
+			Chicken: Yes, but something was following her.
+			Chicken: I saw strange monster footprints behind her.
+			=> jungle_info
+
+
+	~ jungle_info
+
+	Player: What should I do?
+
+	Chicken: You must enter the jungle and follow her trail.
+	Chicken: But be careful!
+	Chicken: The jungle is filled with monsters.
+
+	Player: Monsters?
+
+	Chicken: Yes!
+	Chicken: They protect something called the Magical Stones.
+	Chicken: You will need those stones to open the Red Gate.
+
+	- I'll fight the monsters.
+		Chicken: That's the spirit!
+		Chicken: Defeat the monsters and collect every Magical Stone you find.
+		=> adventure
+
+	- Is there another way?
+		Chicken: I'm afraid not.
+		Chicken: The monsters won't let you pass peacefully.
+		=> adventure
+
+	- What happens if I don't collect them?
+		Chicken: You won't be able to open the Red Gate.
+		Chicken: And your cow is trapped somewhere beyond it.
+		=> adventure
+
+
+	~ adventure
+
+	Chicken: Listen carefully before you leave.
+	Chicken: Follow the path through the jungle.
+	Chicken: Defeat the monsters blocking your way.
+	Chicken: Collect the Magical Stones they guard.
+
+	Player: And then?
+
+	Chicken: When you have collected enough stones...
+	Chicken: You will reach the Red Gate.
+
+	Player: What is behind the Red Gate?
+
+	Chicken: The monster boss lives there.
+	Chicken: And I believe your cow is being held captive by it.
+
+	Player: Then I'll defeat the boss and rescue her!
+
+	Chicken: Exactly!
+	Chicken: Don't give up, no matter how difficult the jungle becomes.
+
+	Player: I'm ready.
+
+	Chicken: Good luck, brave adventurer!
+	Chicken: Bring our cow home!
+
+	set Global.talked_with_chicken = true
+	=> END
+
+
+if Global.talked_with_chicken == true:
+	Chicken: Cluck! Cluck! Go find your Cow!!
+	=> END
+
+=> END

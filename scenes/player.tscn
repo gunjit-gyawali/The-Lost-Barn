@@ -1,168 +1,7 @@
 [gd_scene format=3 uid="uid://dsr3dlwyveibw"]
 
 [ext_resource type="Texture2D" uid="uid://carkppcbpijkk" path="res://assets/tileset/Cute_Fantasy_Free/Player/Player.png" id="1_3vyb7"]
-
-[sub_resource type="GDScript" id="GDScript_3vyb7"]
-script/source = "extends CharacterBody2D
-
-var enemy_inattack_range = false
-var enemy_attack_cooldown = true
-var health = 400
-var player_alive = true
-var attack_ip = false
-
-const speed = 100
-
-var current_direction = \"none\"
-var last_direction = \"front\"
-
-
-func _ready() -> void:
-	$AnimatedSprite2D.play(\"front_idle\")
-
-func _physics_process(_delta: float) -> void:
-	_player_movement()
-	enemy_attack()
-	attack()
-
-
-func _player_movement() -> void:
-	if Input.is_action_just_pressed(\"front\"):
-		current_direction = \"front\"
-	elif Input.is_action_just_pressed(\"right\"):
-		current_direction = \"right\"
-	elif Input.is_action_just_pressed(\"left\"):
-		current_direction = \"left\"
-	elif Input.is_action_just_pressed(\"up\"):
-		current_direction = \"up\"
-
-	if current_direction == \"front\" and not Input.is_action_pressed(\"front\"):
-		_find_held_direction()
-	elif current_direction == \"right\" and not Input.is_action_pressed(\"right\"):
-		_find_held_direction()
-	elif current_direction == \"left\" and not Input.is_action_pressed(\"left\"):
-		_find_held_direction()
-	elif current_direction == \"up\" and not Input.is_action_pressed(\"up\"):
-		_find_held_direction()
-
-	if current_direction == \"front\":
-		last_direction = \"front\"
-		velocity = Vector2(0, speed)
-	elif current_direction == \"right\":
-		last_direction = \"right\"
-		velocity = Vector2(speed, 0)
-	elif current_direction == \"left\":
-		last_direction = \"left\"
-		velocity = Vector2(-speed, 0)
-	elif current_direction == \"up\":
-		last_direction = \"up\"
-		velocity = Vector2(0, -speed)
-	else:
-		velocity = Vector2.ZERO
-
-	if not attack_ip:
-		if velocity == Vector2.ZERO:
-			play_anim(0)
-		else:
-			play_anim(1)
-
-	move_and_slide()
-
-
-func _find_held_direction() -> void:
-	if Input.is_action_pressed(\"front\"):
-		current_direction = \"front\"
-	elif Input.is_action_pressed(\"right\"):
-		current_direction = \"right\"
-	elif Input.is_action_pressed(\"left\"):
-		current_direction = \"left\"
-	elif Input.is_action_pressed(\"up\"):
-		current_direction = \"up\"
-	else:
-		current_direction = \"none\"
-
-
-func play_anim(movement: int) -> void:
-	var anim: AnimatedSprite2D = $AnimatedSprite2D
-
-	if movement == 0:
-		if last_direction == \"right\":
-			anim.flip_h = false
-			anim.play(\"side_idle\")
-		elif last_direction == \"left\":
-			anim.flip_h = true
-			anim.play(\"side_idle\")
-		elif last_direction == \"front\":
-			anim.flip_h = false
-			anim.play(\"front_idle\")
-		elif last_direction == \"up\":
-			anim.flip_h = false
-			anim.play(\"back_idle\")
-
-	elif movement == 1:
-		if current_direction == \"right\":
-			anim.flip_h = false
-			anim.play(\"side_walk\")
-		elif current_direction == \"left\":
-			anim.flip_h = true
-			anim.play(\"side_walk\")
-		elif current_direction == \"front\":
-			anim.flip_h = false
-			anim.play(\"front_walk\")
-		elif current_direction == \"up\":
-			anim.flip_h = false
-			anim.play(\"back_walk\")
-
-
-func player():
-	pass
-
-
-func _on_player_hitbox_body_entered(body: Node2D) -> void:
-	if body.has_method(\"enemy\"):
-		enemy_inattack_range = true
-
-
-func _on_player_hitbox_body_exited(body: Node2D) -> void:
-	if body.has_method(\"enemy\"):
-		enemy_inattack_range = false
-
-
-func enemy_attack() -> void:
-	if enemy_inattack_range and enemy_attack_cooldown:
-		health -= 20
-		enemy_attack_cooldown = false
-		$attack_cooldown.start()
-		print(health)
-
-
-func _on_attack_cooldown_timeout() -> void:
-	enemy_attack_cooldown = true
-
-
-func attack() -> void:
-	if Input.is_action_just_pressed(\"attack\") and not attack_ip:
-		var dir = last_direction
-
-		Global.current_player_attack = true
-		attack_ip = true
-
-		if dir == \"right\":
-			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play(\"side_attack\")
-		elif dir == \"left\":
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play(\"side_attack\")
-		elif dir == \"front\":
-			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play(\"front_attack\")
-		elif dir == \"up\":
-			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play(\"back_attack\")
-
-		$deal_attack_timer.start()
-		
-"
+[ext_resource type="Script" uid="uid://3djeun6ro7kf" path="res://scripts/player.gd" id="1_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hax0n"]
 atlas = ExtResource("1_3vyb7")
@@ -389,7 +228,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"back_attack",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -433,7 +272,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l71n6")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"back_walk",
 "speed": 5.0
 }, {
@@ -469,7 +308,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"front_attack",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -513,7 +352,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3v2ag")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"front_walk",
 "speed": 5.0
 }, {
@@ -532,7 +371,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"side_attack",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -576,7 +415,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wqfne")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"side_walk",
 "speed": 5.0
 }]
@@ -584,15 +423,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sjgg"]
 radius = 5.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cfg4s"]
+radius = 21.0
+
 [node name="player" type="CharacterBody2D" unique_id=57410078 groups=["player"]]
 y_sort_enabled = true
-script = SubResource("GDScript_3vyb7")
+script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=432840074]
 position = Vector2(176.50005, 86.500046)
 scale = Vector2(1.1562518, 1.1562518)
 sprite_frames = SubResource("SpriteFrames_u8vuu")
-animation = &"front_idle"
+animation = &"side_attack"
 autoplay = "front_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1140310257 groups=["player"]]
@@ -607,3 +449,33 @@ limit_top = 0
 limit_right = 1152
 limit_bottom = 648
 rotation_smoothing_enabled = true
+
+[node name="player_hitbox" type="Area2D" parent="." unique_id=1310331879]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox" unique_id=1522834181]
+position = Vector2(176, 87)
+shape = SubResource("CircleShape2D_cfg4s")
+
+[node name="attack_cooldown" type="Timer" parent="." unique_id=481868891]
+wait_time = 0.5
+
+[node name="deal_attack_timer" type="Timer" parent="." unique_id=200099736]
+wait_time = 0.9
+
+[node name="regen_timer" type="Timer" parent="." unique_id=830491419]
+wait_time = 2.6599999999999997
+
+[node name="healthbar" type="ProgressBar" parent="." unique_id=1823842552]
+modulate = Color(0.88031465, 0.116664596, 3.85046e-07, 1)
+offset_left = 152.0
+offset_top = 68.0
+offset_right = 200.0
+offset_bottom = 73.0
+max_value = 400.0
+show_percentage = false
+
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
+[connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
+[connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
+[connection signal="timeout" from="regen_timer" to="." method="_on_regen_timer_timeout"]
