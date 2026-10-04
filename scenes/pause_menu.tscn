@@ -187,9 +187,9 @@ position = Vector2(579, 328)
 
 [node name="CheckButton" parent="." unique_id=1548261650 instance=ExtResource("9_71k7c")]
 layout_mode = 0
-offset_left = 478.0
+offset_left = 487.0
 offset_top = 371.0
-offset_right = 624.0
+offset_right = 633.0
 offset_bottom = 395.0
 
 [connection signal="mouse_entered" from="resume" to="." method="_on_resume_mouse_entered"]

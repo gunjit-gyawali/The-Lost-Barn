@@ -426,7 +426,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_yw88p")
 position = Vector2(-63, 2)
 
 [node name="player" parent="." unique_id=57410078 instance=ExtResource("15_7sjgg")]
-position = Vector2(744, 184)
+position = Vector2(-118, 103)
 
 [node name="pause" type="CanvasLayer" parent="." unique_id=84961862]
 
