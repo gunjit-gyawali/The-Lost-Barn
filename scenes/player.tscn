@@ -443,7 +443,7 @@ shape = SubResource("CircleShape2D_7sjgg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1713367170]
 position = Vector2(176, 84)
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 0
 limit_right = 1152

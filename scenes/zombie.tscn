@@ -131,7 +131,7 @@ height = 42.0
 font = ExtResource("2_httt1")
 font_size = 14
 
-[node name="zombie" type="CharacterBody2D" unique_id=1009731417]
+[node name="zombie" type="CharacterBody2D" unique_id=1009731417 groups=["zombie"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2122690762]
 position = Vector2(26.125002, 11.625)

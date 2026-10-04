@@ -83,14 +83,21 @@ if Global.talked_with_chicken == false:
 	Player: I'm ready.
 
 	Chicken: Good luck, brave adventurer!
-	Chicken: Bring our cow home!
+	Chicken: Bring our cow home! 
+	Chicken: First of all bring me the magical orb. 
+	Chicken: It is right beside the farm below.
 
 	set Global.talked_with_chicken = true
 	=> END
 
 
-if Global.talked_with_chicken == true:
-	Chicken: Cluck! Cluck! Go find your Cow!!
+if Global.talked_with_chicken == true and GameController.total_coins != 1:
+	Chicken: Where is the orb? Bring it if you want to go to the jungle. It is right beside the farm.
 	=> END
-
+ 
+if GameController.total_coins == 1:
+	set Global.stone_recived_by_chicken == true
+	Chicken: Thanks Now you can go to the forest!
+	=> END
+	
 => END
