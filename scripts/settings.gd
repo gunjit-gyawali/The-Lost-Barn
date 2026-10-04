@@ -18,22 +18,9 @@ func _on_exit_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 
-func _on_check_button_pressed() -> void:
-	count += 1
-	if count % 2 != 0:
-		bg_music.stop()
-		print("on")
-	else:
-		bg_music.play()
-		
-		print("off")
-		
-	$pressed1.play()
-	await $pressed1.finished
-	pass 
-
 
 func _on_fullscreen_mouse_entered() -> void:
+		
 	$hover1.play()
 
 

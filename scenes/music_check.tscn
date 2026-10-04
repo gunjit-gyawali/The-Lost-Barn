@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://r0wcv6b6fcak"]
+
+[ext_resource type="Script" uid="uid://hdj0c85le6xy" path="res://scripts/check_button.gd" id="1_xfwdn"]
+
+[node name="music_check" type="Node" unique_id=1463793103]
+
+[node name="CheckButton" type="CheckButton" parent="." unique_id=247693739]
+offset_left = 438.0
+offset_top = 235.0
+offset_right = 482.0
+offset_bottom = 259.0
+script = ExtResource("1_xfwdn")
+
+[connection signal="pressed" from="CheckButton" to="CheckButton" method="_on_pressed"]

@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://d4lrcv8m6pixr" path="res://assets/Fonts/Mileast.otf" id="5_es4n0"]
 [ext_resource type="AudioStream" uid="uid://d0liex6l6kxql" path="res://assets/music/hover.mp3" id="6_83j8s"]
 [ext_resource type="AudioStream" uid="uid://1kd74ecjvhqk" path="res://assets/music/pressed.mp3" id="7_gjs24"]
+[ext_resource type="PackedScene" uid="uid://cy47ac8hh1ici" path="res://scenes/check_button1.tscn" id="8_gjs24"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gjs24"]
 texture = ExtResource("1_f4mfi")
@@ -166,22 +167,20 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gis3k")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gis3k")
 text = "Exit"
 
-[node name="CheckButton" type="CheckButton" parent="." unique_id=1044770556]
-offset_left = 827.0
-offset_top = 443.0
-offset_right = 981.0
-offset_bottom = 481.0
-button_pressed = true
-
 [node name="hover1" type="AudioStreamPlayer" parent="." unique_id=1786336731]
 stream = ExtResource("6_83j8s")
 
 [node name="pressed1" type="AudioStreamPlayer" parent="." unique_id=1858757554]
 stream = ExtResource("7_gjs24")
 
+[node name="CheckButton" parent="." unique_id=1548261650 instance=ExtResource("8_gjs24")]
+offset_left = 858.0
+offset_top = 452.0
+offset_right = 973.0
+offset_bottom = 476.0
+
 [connection signal="mouse_entered" from="full-screen" to="." method="_on_fullscreen_mouse_entered"]
 [connection signal="pressed" from="full-screen" to="." method="_on_fullscreen_pressed"]
 [connection signal="mouse_entered" from="music" to="." method="_on_music_mouse_entered"]
 [connection signal="mouse_entered" from="exit" to="." method="_on_exit_mouse_entered"]
 [connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="CheckButton" to="." method="_on_check_button_pressed"]

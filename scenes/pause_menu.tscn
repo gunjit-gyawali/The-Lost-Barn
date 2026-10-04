@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://bp46lcglgopv3" path="res://assets/Fonts/HollyBerryPop-LVxvE.ttf" id="6_v4r4p"]
 [ext_resource type="Texture2D" uid="uid://5yrti45kpk3a" path="res://assets/tileset/Cute_Fantasy_Free/Animals/Chicken/Chicken.png" id="7_88e76"]
 [ext_resource type="Texture2D" uid="uid://carkppcbpijkk" path="res://assets/tileset/Cute_Fantasy_Free/Player/Player.png" id="8_knqa7"]
+[ext_resource type="PackedScene" uid="uid://cy47ac8hh1ici" path="res://scenes/check_button1.tscn" id="9_71k7c"]
 [ext_resource type="AudioStream" uid="uid://1kd74ecjvhqk" path="res://assets/music/pressed.mp3" id="9_knqa7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5d2l8"]
@@ -133,9 +134,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Music" type="Button" parent="." unique_id=82542089]
 layout_mode = 0
-offset_left = 498.0
+offset_left = 460.0
 offset_top = 366.0
-offset_right = 637.0
+offset_right = 599.0
 offset_bottom = 400.0
 theme_override_colors/font_color = Color(0.7921569, 0.6901961, 0.5176471, 1)
 theme_override_colors/font_pressed_color = Color(1, 0.8745098, 0.627451, 1)
@@ -146,7 +147,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_v4r4p")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v4r4p")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v4r4p")
 text = "M u s i c"
-metadata/_edit_use_anchors_ = true
 
 [node name="exit" type="Button" parent="." unique_id=728400699]
 layout_mode = 0
@@ -181,6 +181,16 @@ scale = Vector2(10.964285, 11.517857)
 texture = ExtResource("8_knqa7")
 region_enabled = true
 region_rect = Rect2(0, 0, 35.664032, 28.921955)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=772682095]
+position = Vector2(579, 328)
+
+[node name="CheckButton" parent="." unique_id=1548261650 instance=ExtResource("9_71k7c")]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 371.0
+offset_right = 633.0
+offset_bottom = 395.0
 
 [connection signal="mouse_entered" from="resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
