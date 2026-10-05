@@ -390,8 +390,8 @@ layer_3/tile_data = PackedInt32Array(1048576, 10, 0, 1376265, 10, 0, 1703951, 13
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1153612417]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=201006972]
-polygon = PackedVector2Array(0, 0, 1151, -43, 1152, 648, -1, 648, 0, 0, -1, -1, -40, 687, 1182, 718, 1198, 19, 0, -1)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=263132783]
+polygon = PackedVector2Array(-51, 1, -68, 754, 1250, 751, 1262, -86, -49, -66, -51, -3, -3, 0, 1152, 2, 1151, 656, 1, 655, 2, 1)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=155250176]
 
@@ -445,6 +445,9 @@ position = Vector2(1029, 286)
 [node name="enemy9" parent="enemis" unique_id=437091422 instance=ExtResource("18_i8c00")]
 position = Vector2(858, 479)
 
+[node name="enemy10" parent="enemis" unique_id=700411459 instance=ExtResource("18_i8c00")]
+position = Vector2(1061, 121)
+
 [node name="ruines" type="Node" parent="." unique_id=882357913]
 
 [node name="ruine" parent="ruines" unique_id=1161343689 instance=ExtResource("17_i5orm")]
@@ -473,6 +476,9 @@ position = Vector2(1031, 276)
 
 [node name="ruine9" parent="ruines" unique_id=279388138 instance=ExtResource("17_i5orm")]
 position = Vector2(856, 487)
+
+[node name="ruine10" parent="ruines" unique_id=1080551748 instance=ExtResource("17_i5orm")]
+position = Vector2(1056, 96)
 
 [node name="zombie" parent="." unique_id=1009731417 instance=ExtResource("20_eprsx")]
 position = Vector2(988, 273)

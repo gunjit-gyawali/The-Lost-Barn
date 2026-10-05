@@ -127,13 +127,7 @@ if Global.talked_with_zombie == false:
 if Global.talked_with_zombie == true:
 
 	Zombie: Keep going deeper into the jungle.
-	Zombie: The Demon's army is waiting for you.
-	Zombie: Don't let them stop you.
-
-	Player: I'll find my cow.
-
-	Zombie: Then keep fighting.
-	Zombie: I'll be waiting here when you return.
+	Zombie: If you can't go then you need total 11 stones to go deeper.
 
 	=> END
 

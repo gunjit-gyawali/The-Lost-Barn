@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cko2pu1xr1hs1"]
 
 [ext_resource type="Texture2D" uid="uid://b51wwoxqa6adj" path="res://assets/tileset/Cute_Fantasy_Free/Tiles/Beach_Tile.png" id="1_4h2u1"]
+[ext_resource type="Script" uid="uid://8n2nr1mk4abx" path="res://scripts/traning_ground.gd" id="1_l61aj"]
 [ext_resource type="Texture2D" uid="uid://dq51nsx6dutwq" path="res://assets/tileset/Cute_Fantasy_Free/Tiles/Cliff_Tile.png" id="2_4pxyy"]
 [ext_resource type="Texture2D" uid="uid://bw1th51i4pkul" path="res://assets/tileset/Cute_Fantasy_Free/Outdoor decoration/Oak_Tree.png" id="3_b53t3"]
 [ext_resource type="Texture2D" uid="uid://duvhuu31tq5sc" path="res://assets/tileset/Cute_Fantasy_Free/Outdoor decoration/Outdoor_Decor_Free.png" id="4_umgyw"]
@@ -18,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dsr3dlwyveibw" path="res://scenes/player.tscn" id="16_eloy0"]
 [ext_resource type="PackedScene" uid="uid://51wwd7gmcktq" path="res://scenes/pause_menu.tscn" id="17_ln2n2"]
 [ext_resource type="Texture2D" uid="uid://dkl33e55gsr1f" path="res://assets/Images/53.png" id="18_4pxyy"]
+[ext_resource type="PackedScene" uid="uid://bsss51crgdf5f" path="res://scenes/ruine.tscn" id="19_5wcn7"]
 [ext_resource type="PackedScene" uid="uid://bp1gpo02ge3xr" path="res://scenes/enemy.tscn" id="19_b53t3"]
 [ext_resource type="FontFile" uid="uid://desawmtyi1blf" path="res://assets/Fonts/SimpleMinimalist-3lV3z.otf" id="20_umgyw"]
 
@@ -366,16 +368,17 @@ gradient = SubResource("Gradient_y1cdt")
 texture = SubResource("GradientTexture2D_n27jj")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pxyy"]
-size = Vector2(101, 57.875)
+size = Vector2(43, 51.875)
 
 [sub_resource type="LabelSettings" id="LabelSettings_yw88p"]
 font = ExtResource("20_umgyw")
-font_size = 14
+font_size = 13
 font_color = Color(0, 0, 0, 1)
-outline_size = 10
+outline_size = 1
 
 [node name="traning_ground" type="Node2D" unique_id=1946185424]
 y_sort_enabled = true
+script = ExtResource("1_l61aj")
 
 [node name="TileMap2" type="TileMap" parent="." unique_id=1592002629]
 y_sort_enabled = true
@@ -428,284 +431,330 @@ scale = Vector2(1.0256256, 1.0256256)
 texture = ExtResource("18_4pxyy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1052744158]
-visible = false
-position = Vector2(965.5, 125.0625)
+position = Vector2(961.5, 122.0625)
 shape = SubResource("RectangleShape2D_4pxyy")
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=309318928]
-visible = false
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D2" unique_id=666647076]
-y_sort_enabled = true
-position = Vector2(966, 125)
-shape = SubResource("RectangleShape2D_4pxyy")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D2" unique_id=432464457]
+polygon = PackedVector2Array(937, 149, 939, 149, 940, 95, 983, 96, 983, 153, 1008, 148, 1008, 145, 1001, 144, 998, 131, 988, 116, 987, 107, 989, 105, 989, 103, 986, 99, 985, 94, 936, 92, 929, 104, 931, 107, 931, 117, 926, 122, 923, 126, 919, 132, 919, 139, 917, 144, 911, 144, 910, 148, 923, 152, 938, 154, 939, 152, 939, 150)
 
-[node name="enemy" parent="." unique_id=1020187104 instance=ExtResource("19_b53t3")]
+[node name="ruines" type="Node" parent="." unique_id=558139056]
+
+[node name="ruine" parent="ruines" unique_id=1161343689 instance=ExtResource("19_5wcn7")]
+position = Vector2(175, 102)
+
+[node name="ruine3" parent="ruines" unique_id=121530752 instance=ExtResource("19_5wcn7")]
+position = Vector2(569, 103)
+
+[node name="ruine5" parent="ruines" unique_id=1621301560 instance=ExtResource("19_5wcn7")]
+position = Vector2(1012, 259)
+
+[node name="ruine4" parent="ruines" unique_id=1975603601 instance=ExtResource("19_5wcn7")]
+position = Vector2(761, 491)
+
+[node name="ruine2" parent="ruines" unique_id=1811486910 instance=ExtResource("19_5wcn7")]
+position = Vector2(146, 505)
+
+[node name="enemis" type="Node" parent="." unique_id=1009256909]
+
+[node name="enemy" parent="enemis" unique_id=1020187104 instance=ExtResource("19_b53t3")]
 position = Vector2(130, 431)
 
-[node name="enemy2" parent="." unique_id=265857766 instance=ExtResource("19_b53t3")]
+[node name="enemy2" parent="enemis" unique_id=265857766 instance=ExtResource("19_b53t3")]
 position = Vector2(173, 442)
 
-[node name="enemy3" parent="." unique_id=19463408 instance=ExtResource("19_b53t3")]
+[node name="enemy3" parent="enemis" unique_id=19463408 instance=ExtResource("19_b53t3")]
 position = Vector2(139, 475)
 
-[node name="enemy4" parent="." unique_id=312734100 instance=ExtResource("19_b53t3")]
+[node name="enemy4" parent="enemis" unique_id=312734100 instance=ExtResource("19_b53t3")]
 position = Vector2(194, 506)
 
-[node name="enemy6" parent="." unique_id=1858684164 instance=ExtResource("19_b53t3")]
+[node name="enemy5" parent="enemis" unique_id=50182858 instance=ExtResource("19_b53t3")]
+position = Vector2(242, 454)
+
+[node name="enemy7" parent="enemis" unique_id=1696943979 instance=ExtResource("19_b53t3")]
+position = Vector2(737, 473)
+
+[node name="enemy8" parent="enemis" unique_id=1945004773 instance=ExtResource("19_b53t3")]
+position = Vector2(706, 479)
+
+[node name="enemy9" parent="enemis" unique_id=1428529231 instance=ExtResource("19_b53t3")]
+position = Vector2(677, 477)
+
+[node name="enemy10" parent="enemis" unique_id=265300763 instance=ExtResource("19_b53t3")]
+position = Vector2(703, 458)
+
+[node name="enemy11" parent="enemis" unique_id=1372771962 instance=ExtResource("19_b53t3")]
+position = Vector2(735, 446)
+
+[node name="enemy12" parent="enemis" unique_id=515273303 instance=ExtResource("19_b53t3")]
+position = Vector2(768, 469)
+
+[node name="enemy13" parent="enemis" unique_id=165728581 instance=ExtResource("19_b53t3")]
+position = Vector2(746, 564)
+
+[node name="enemy14" parent="enemis" unique_id=1322708877 instance=ExtResource("19_b53t3")]
+position = Vector2(709, 571)
+
+[node name="enemy15" parent="enemis" unique_id=2105227095 instance=ExtResource("19_b53t3")]
+position = Vector2(677, 556)
+
+[node name="enemy16" parent="enemis" unique_id=1534147827 instance=ExtResource("19_b53t3")]
+position = Vector2(713, 548)
+
+[node name="enemy17" parent="enemis" unique_id=2118505146 instance=ExtResource("19_b53t3")]
+position = Vector2(757, 538)
+
+[node name="enemy18" parent="enemis" unique_id=1339304052 instance=ExtResource("19_b53t3")]
+position = Vector2(782, 519)
+
+[node name="enemy19" parent="enemis" unique_id=1606199774 instance=ExtResource("19_b53t3")]
+position = Vector2(429, 67)
+
+[node name="enemy25" parent="enemis" unique_id=1424069417 instance=ExtResource("19_b53t3")]
+position = Vector2(471, 70)
+
+[node name="enemy26" parent="enemis" unique_id=30056098 instance=ExtResource("19_b53t3")]
+position = Vector2(502, 70)
+
+[node name="enemy27" parent="enemis" unique_id=2118384543 instance=ExtResource("19_b53t3")]
+position = Vector2(533, 69)
+
+[node name="enemy28" parent="enemis" unique_id=819114388 instance=ExtResource("19_b53t3")]
+position = Vector2(568, 65)
+
+[node name="enemy29" parent="enemis" unique_id=51238865 instance=ExtResource("19_b53t3")]
+position = Vector2(545, 52)
+
+[node name="enemy30" parent="enemis" unique_id=1590740405 instance=ExtResource("19_b53t3")]
+position = Vector2(512, 52)
+
+[node name="enemy31" parent="enemis" unique_id=1825760001 instance=ExtResource("19_b53t3")]
+position = Vector2(491, 49)
+
+[node name="enemy32" parent="enemis" unique_id=83347091 instance=ExtResource("19_b53t3")]
+position = Vector2(453, 49)
+
+[node name="enemy33" parent="enemis" unique_id=1811329690 instance=ExtResource("19_b53t3")]
+position = Vector2(433, 40)
+
+[node name="enemy34" parent="enemis" unique_id=1594604936 instance=ExtResource("19_b53t3")]
+position = Vector2(465, 37)
+
+[node name="enemy35" parent="enemis" unique_id=656730768 instance=ExtResource("19_b53t3")]
+position = Vector2(484, 35)
+
+[node name="enemy36" parent="enemis" unique_id=1765155326 instance=ExtResource("19_b53t3")]
+position = Vector2(472, 197)
+
+[node name="enemy48" parent="enemis" unique_id=1591651358 instance=ExtResource("19_b53t3")]
+position = Vector2(501, 197)
+
+[node name="enemy49" parent="enemis" unique_id=521120863 instance=ExtResource("19_b53t3")]
+position = Vector2(525, 200)
+
+[node name="enemy53" parent="enemis" unique_id=1142779752 instance=ExtResource("19_b53t3")]
+position = Vector2(428, 194)
+
+[node name="enemy54" parent="enemis" unique_id=1830092981 instance=ExtResource("19_b53t3")]
+position = Vector2(410, 180)
+
+[node name="enemy55" parent="enemis" unique_id=1897124485 instance=ExtResource("19_b53t3")]
+position = Vector2(403, 165)
+
+[node name="enemy56" parent="enemis" unique_id=1338015738 instance=ExtResource("19_b53t3")]
+position = Vector2(393, 146)
+
+[node name="enemy57" parent="enemis" unique_id=1991060016 instance=ExtResource("19_b53t3")]
+position = Vector2(450, 204)
+
+[node name="enemy58" parent="enemis" unique_id=804088376 instance=ExtResource("19_b53t3")]
+position = Vector2(546, 262)
+
+[node name="enemy59" parent="enemis" unique_id=1150346998 instance=ExtResource("19_b53t3")]
+position = Vector2(721, 173)
+
+[node name="enemy60" parent="enemis" unique_id=1550277138 instance=ExtResource("19_b53t3")]
+position = Vector2(717, 87)
+
+[node name="enemy61" parent="enemis" unique_id=884851156 instance=ExtResource("19_b53t3")]
+position = Vector2(117, 96)
+
+[node name="enemy62" parent="enemis" unique_id=7247111 instance=ExtResource("19_b53t3")]
+position = Vector2(207, 53)
+
+[node name="enemy63" parent="enemis" unique_id=1106372819 instance=ExtResource("19_b53t3")]
+position = Vector2(-13, 84)
+
+[node name="enemy64" parent="enemis" unique_id=884475590 instance=ExtResource("19_b53t3")]
+position = Vector2(66, 31)
+
+[node name="enemy65" parent="enemis" unique_id=1183218363 instance=ExtResource("19_b53t3")]
+position = Vector2(68, 311)
+
+[node name="enemy66" parent="enemis" unique_id=1619605279 instance=ExtResource("19_b53t3")]
+position = Vector2(9, 286)
+
+[node name="enemy67" parent="enemis" unique_id=203557290 instance=ExtResource("19_b53t3")]
+position = Vector2(24, 402)
+
+[node name="enemy68" parent="enemis" unique_id=1333688402 instance=ExtResource("19_b53t3")]
+position = Vector2(58, 552)
+
+[node name="enemy69" parent="enemis" unique_id=1147285302 instance=ExtResource("19_b53t3")]
+position = Vector2(210, 593)
+
+[node name="enemy70" parent="enemis" unique_id=1033563824 instance=ExtResource("19_b53t3")]
+position = Vector2(337, 541)
+
+[node name="enemy71" parent="enemis" unique_id=1447954325 instance=ExtResource("19_b53t3")]
+position = Vector2(368, 397)
+
+[node name="enemy72" parent="enemis" unique_id=1632070395 instance=ExtResource("19_b53t3")]
+position = Vector2(499, 562)
+
+[node name="enemy73" parent="enemis" unique_id=538736048 instance=ExtResource("19_b53t3")]
+position = Vector2(919, 476)
+
+[node name="enemy74" parent="enemis" unique_id=190354421 instance=ExtResource("19_b53t3")]
+position = Vector2(1010, 457)
+
+[node name="enemy75" parent="enemis" unique_id=992678253 instance=ExtResource("19_b53t3")]
+position = Vector2(1021, 542)
+
+[node name="enemy76" parent="enemis" unique_id=2033268765 instance=ExtResource("19_b53t3")]
+position = Vector2(1106, 441)
+
+[node name="enemy50" parent="enemis" unique_id=720196517 instance=ExtResource("19_b53t3")]
+position = Vector2(548, 194)
+
+[node name="enemy51" parent="enemis" unique_id=1886209991 instance=ExtResource("19_b53t3")]
+position = Vector2(565, 185)
+
+[node name="enemy52" parent="enemis" unique_id=1306391837 instance=ExtResource("19_b53t3")]
+position = Vector2(579, 174)
+
+[node name="enemy37" parent="enemis" unique_id=497608856 instance=ExtResource("19_b53t3")]
+position = Vector2(531, 37)
+
+[node name="enemy38" parent="enemis" unique_id=811507914 instance=ExtResource("19_b53t3")]
+position = Vector2(534, 26)
+
+[node name="enemy39" parent="enemis" unique_id=1393046281 instance=ExtResource("19_b53t3")]
+position = Vector2(534, 26)
+
+[node name="enemy40" parent="enemis" unique_id=751421321 instance=ExtResource("19_b53t3")]
+position = Vector2(509, 22)
+
+[node name="enemy41" parent="enemis" unique_id=1655488340 instance=ExtResource("19_b53t3")]
+position = Vector2(475, 16)
+
+[node name="enemy42" parent="enemis" unique_id=1094346921 instance=ExtResource("19_b53t3")]
+position = Vector2(453, 17)
+
+[node name="enemy43" parent="enemis" unique_id=425632629 instance=ExtResource("19_b53t3")]
+position = Vector2(479, 7)
+
+[node name="enemy44" parent="enemis" unique_id=1215930822 instance=ExtResource("19_b53t3")]
+position = Vector2(513, 14)
+
+[node name="enemy45" parent="enemis" unique_id=1205506450 instance=ExtResource("19_b53t3")]
+position = Vector2(532, 14)
+
+[node name="enemy46" parent="enemis" unique_id=267602352 instance=ExtResource("19_b53t3")]
+position = Vector2(552, 23)
+
+[node name="enemy47" parent="enemis" unique_id=139143706 instance=ExtResource("19_b53t3")]
+position = Vector2(552, 23)
+
+[node name="enemy6" parent="enemis" unique_id=1858684164 instance=ExtResource("19_b53t3")]
 position = Vector2(194, 506)
 
-[node name="AnimatedSprite2D" parent="enemy6" index="0" unique_id=658146368]
+[node name="AnimatedSprite2D" parent="enemis/enemy6" index="0" unique_id=658146368]
 position = Vector2(22.249998, -23.749998)
 scale = Vector2(2.3359373, 2.3359373)
 
-[node name="CollisionShape2D" parent="enemy6/detection_area" parent_id_path=PackedInt32Array(1858684164, 1500846692) index="0" unique_id=1302375684]
+[node name="CollisionShape2D" parent="enemis/enemy6/detection_area" parent_id_path=PackedInt32Array(1858684164, 1500846692) index="0" unique_id=1302375684]
 position = Vector2(-11, -35)
 
-[node name="enemy5" parent="." unique_id=50182858 instance=ExtResource("19_b53t3")]
-position = Vector2(242, 454)
+[node name="healthbar" parent="enemis/enemy6" index="5" unique_id=1438948823]
+metadata/_edit_use_anchors_ = true
 
-[node name="enemy7" parent="." unique_id=1696943979 instance=ExtResource("19_b53t3")]
-position = Vector2(737, 473)
-
-[node name="enemy8" parent="." unique_id=1945004773 instance=ExtResource("19_b53t3")]
-position = Vector2(706, 479)
-
-[node name="enemy9" parent="." unique_id=1428529231 instance=ExtResource("19_b53t3")]
-position = Vector2(677, 477)
-
-[node name="enemy10" parent="." unique_id=265300763 instance=ExtResource("19_b53t3")]
-position = Vector2(703, 458)
-
-[node name="enemy11" parent="." unique_id=1372771962 instance=ExtResource("19_b53t3")]
-position = Vector2(735, 446)
-
-[node name="enemy12" parent="." unique_id=515273303 instance=ExtResource("19_b53t3")]
-position = Vector2(768, 469)
-
-[node name="enemy13" parent="." unique_id=165728581 instance=ExtResource("19_b53t3")]
-position = Vector2(746, 564)
-
-[node name="enemy14" parent="." unique_id=1322708877 instance=ExtResource("19_b53t3")]
-position = Vector2(709, 571)
-
-[node name="enemy15" parent="." unique_id=2105227095 instance=ExtResource("19_b53t3")]
-position = Vector2(677, 556)
-
-[node name="enemy16" parent="." unique_id=1534147827 instance=ExtResource("19_b53t3")]
-position = Vector2(713, 548)
-
-[node name="enemy17" parent="." unique_id=2118505146 instance=ExtResource("19_b53t3")]
-position = Vector2(757, 538)
-
-[node name="enemy18" parent="." unique_id=1339304052 instance=ExtResource("19_b53t3")]
-position = Vector2(782, 519)
-
-[node name="enemy19" parent="." unique_id=1606199774 instance=ExtResource("19_b53t3")]
-position = Vector2(429, 67)
-
-[node name="enemy25" parent="." unique_id=1424069417 instance=ExtResource("19_b53t3")]
-position = Vector2(471, 70)
-
-[node name="enemy26" parent="." unique_id=30056098 instance=ExtResource("19_b53t3")]
-position = Vector2(502, 70)
-
-[node name="enemy27" parent="." unique_id=2118384543 instance=ExtResource("19_b53t3")]
-position = Vector2(533, 69)
-
-[node name="enemy28" parent="." unique_id=819114388 instance=ExtResource("19_b53t3")]
-position = Vector2(568, 70)
-
-[node name="enemy29" parent="." unique_id=51238865 instance=ExtResource("19_b53t3")]
-position = Vector2(545, 52)
-
-[node name="enemy30" parent="." unique_id=1590740405 instance=ExtResource("19_b53t3")]
-position = Vector2(512, 52)
-
-[node name="enemy31" parent="." unique_id=1825760001 instance=ExtResource("19_b53t3")]
-position = Vector2(491, 49)
-
-[node name="enemy32" parent="." unique_id=83347091 instance=ExtResource("19_b53t3")]
-position = Vector2(453, 49)
-
-[node name="enemy33" parent="." unique_id=1811329690 instance=ExtResource("19_b53t3")]
-position = Vector2(433, 40)
-
-[node name="enemy34" parent="." unique_id=1594604936 instance=ExtResource("19_b53t3")]
-position = Vector2(465, 37)
-
-[node name="enemy35" parent="." unique_id=656730768 instance=ExtResource("19_b53t3")]
-position = Vector2(484, 35)
-
-[node name="enemy36" parent="." unique_id=1765155326 instance=ExtResource("19_b53t3")]
-position = Vector2(472, 197)
-
-[node name="enemy48" parent="." unique_id=1591651358 instance=ExtResource("19_b53t3")]
-position = Vector2(501, 197)
-
-[node name="enemy49" parent="." unique_id=521120863 instance=ExtResource("19_b53t3")]
-position = Vector2(525, 200)
-
-[node name="enemy53" parent="." unique_id=1142779752 instance=ExtResource("19_b53t3")]
-position = Vector2(428, 194)
-
-[node name="enemy54" parent="." unique_id=1830092981 instance=ExtResource("19_b53t3")]
-position = Vector2(410, 180)
-
-[node name="enemy55" parent="." unique_id=1897124485 instance=ExtResource("19_b53t3")]
-position = Vector2(403, 165)
-
-[node name="enemy56" parent="." unique_id=1338015738 instance=ExtResource("19_b53t3")]
-position = Vector2(393, 146)
-
-[node name="enemy57" parent="." unique_id=1991060016 instance=ExtResource("19_b53t3")]
-position = Vector2(450, 204)
-
-[node name="enemy58" parent="." unique_id=804088376 instance=ExtResource("19_b53t3")]
-position = Vector2(546, 262)
-
-[node name="enemy59" parent="." unique_id=1150346998 instance=ExtResource("19_b53t3")]
-position = Vector2(721, 173)
-
-[node name="enemy60" parent="." unique_id=1550277138 instance=ExtResource("19_b53t3")]
-position = Vector2(717, 87)
-
-[node name="enemy61" parent="." unique_id=884851156 instance=ExtResource("19_b53t3")]
-position = Vector2(117, 96)
-
-[node name="enemy62" parent="." unique_id=7247111 instance=ExtResource("19_b53t3")]
-position = Vector2(207, 53)
-
-[node name="enemy63" parent="." unique_id=1106372819 instance=ExtResource("19_b53t3")]
-position = Vector2(-13, 84)
-
-[node name="enemy64" parent="." unique_id=884475590 instance=ExtResource("19_b53t3")]
-position = Vector2(50, 26)
-
-[node name="enemy65" parent="." unique_id=1183218363 instance=ExtResource("19_b53t3")]
-position = Vector2(68, 311)
-
-[node name="enemy66" parent="." unique_id=1619605279 instance=ExtResource("19_b53t3")]
-position = Vector2(9, 286)
-
-[node name="enemy67" parent="." unique_id=203557290 instance=ExtResource("19_b53t3")]
-position = Vector2(24, 402)
-
-[node name="enemy68" parent="." unique_id=1333688402 instance=ExtResource("19_b53t3")]
-position = Vector2(58, 552)
-
-[node name="enemy69" parent="." unique_id=1147285302 instance=ExtResource("19_b53t3")]
-position = Vector2(210, 593)
-
-[node name="enemy70" parent="." unique_id=1033563824 instance=ExtResource("19_b53t3")]
-position = Vector2(337, 541)
-
-[node name="enemy71" parent="." unique_id=1447954325 instance=ExtResource("19_b53t3")]
-position = Vector2(368, 397)
-
-[node name="enemy72" parent="." unique_id=1632070395 instance=ExtResource("19_b53t3")]
-position = Vector2(499, 562)
-
-[node name="enemy73" parent="." unique_id=538736048 instance=ExtResource("19_b53t3")]
-position = Vector2(919, 476)
-
-[node name="enemy74" parent="." unique_id=190354421 instance=ExtResource("19_b53t3")]
-position = Vector2(1010, 457)
-
-[node name="enemy75" parent="." unique_id=992678253 instance=ExtResource("19_b53t3")]
-position = Vector2(1021, 542)
-
-[node name="enemy76" parent="." unique_id=2033268765 instance=ExtResource("19_b53t3")]
-position = Vector2(1106, 441)
-
-[node name="enemy50" parent="." unique_id=720196517 instance=ExtResource("19_b53t3")]
-position = Vector2(548, 194)
-
-[node name="enemy51" parent="." unique_id=1886209991 instance=ExtResource("19_b53t3")]
-position = Vector2(565, 185)
-
-[node name="enemy52" parent="." unique_id=1306391837 instance=ExtResource("19_b53t3")]
-position = Vector2(579, 174)
-
-[node name="enemy37" parent="." unique_id=497608856 instance=ExtResource("19_b53t3")]
-position = Vector2(531, 37)
-
-[node name="enemy38" parent="." unique_id=811507914 instance=ExtResource("19_b53t3")]
-position = Vector2(534, 26)
-
-[node name="enemy39" parent="." unique_id=1393046281 instance=ExtResource("19_b53t3")]
-position = Vector2(534, 26)
-
-[node name="enemy40" parent="." unique_id=751421321 instance=ExtResource("19_b53t3")]
-position = Vector2(509, 22)
-
-[node name="enemy41" parent="." unique_id=1655488340 instance=ExtResource("19_b53t3")]
-position = Vector2(475, 16)
-
-[node name="enemy42" parent="." unique_id=1094346921 instance=ExtResource("19_b53t3")]
-position = Vector2(453, 17)
-
-[node name="enemy43" parent="." unique_id=425632629 instance=ExtResource("19_b53t3")]
-position = Vector2(479, 7)
-
-[node name="enemy44" parent="." unique_id=1215930822 instance=ExtResource("19_b53t3")]
-position = Vector2(513, 14)
-
-[node name="enemy45" parent="." unique_id=1205506450 instance=ExtResource("19_b53t3")]
-position = Vector2(532, 14)
-
-[node name="enemy46" parent="." unique_id=267602352 instance=ExtResource("19_b53t3")]
-position = Vector2(552, 23)
-
-[node name="enemy47" parent="." unique_id=139143706 instance=ExtResource("19_b53t3")]
-position = Vector2(552, 23)
-
-[node name="enemy20" parent="." unique_id=1277756696 instance=ExtResource("19_b53t3")]
+[node name="enemy20" parent="enemis" unique_id=1277756696 instance=ExtResource("19_b53t3")]
 position = Vector2(939, 252)
 
-[node name="AnimatedSprite2D" parent="enemy20" index="0" unique_id=658146368]
+[node name="AnimatedSprite2D" parent="enemis/enemy20" index="0" unique_id=658146368]
 position = Vector2(22, 13)
 scale = Vector2(2.796875, 2.796875)
 
-[node name="enemy21" parent="." unique_id=1391777788 instance=ExtResource("19_b53t3")]
+[node name="healthbar" parent="enemis/enemy20" index="5" unique_id=1438948823]
+metadata/_edit_use_anchors_ = true
+
+[node name="enemy21" parent="enemis" unique_id=1391777788 instance=ExtResource("19_b53t3")]
 position = Vector2(939, 305)
 
-[node name="AnimatedSprite2D" parent="enemy21" index="0" unique_id=658146368]
+[node name="AnimatedSprite2D" parent="enemis/enemy21" index="0" unique_id=658146368]
 position = Vector2(22, 13)
 scale = Vector2(2.796875, 2.796875)
 
-[node name="enemy22" parent="." unique_id=1098023246 instance=ExtResource("19_b53t3")]
+[node name="healthbar" parent="enemis/enemy21" index="5" unique_id=1438948823]
+metadata/_edit_use_anchors_ = true
+
+[node name="enemy22" parent="enemis" unique_id=1098023246 instance=ExtResource("19_b53t3")]
 position = Vector2(939, 193)
 
-[node name="AnimatedSprite2D" parent="enemy22" index="0" unique_id=658146368]
+[node name="AnimatedSprite2D" parent="enemis/enemy22" index="0" unique_id=658146368]
 position = Vector2(22, 13)
 scale = Vector2(2.796875, 2.796875)
 
-[node name="enemy23" parent="." unique_id=922890987 instance=ExtResource("19_b53t3")]
+[node name="healthbar" parent="enemis/enemy22" index="5" unique_id=1438948823]
+metadata/_edit_use_anchors_ = true
+
+[node name="enemy23" parent="enemis" unique_id=922890987 instance=ExtResource("19_b53t3")]
 position = Vector2(875, 257)
 
-[node name="AnimatedSprite2D" parent="enemy23" index="0" unique_id=658146368]
+[node name="AnimatedSprite2D" parent="enemis/enemy23" index="0" unique_id=658146368]
 position = Vector2(22, 13)
 scale = Vector2(2.796875, 2.796875)
 
-[node name="enemy24" parent="." unique_id=1546235201 instance=ExtResource("19_b53t3")]
+[node name="healthbar" parent="enemis/enemy23" index="5" unique_id=1438948823]
+metadata/_edit_use_anchors_ = true
+
+[node name="enemy24" parent="enemis" unique_id=1546235201 instance=ExtResource("19_b53t3")]
 position = Vector2(1011, 257)
 
-[node name="AnimatedSprite2D" parent="enemy24" index="0" unique_id=658146368]
+[node name="AnimatedSprite2D" parent="enemis/enemy24" index="0" unique_id=658146368]
 position = Vector2(22, 13)
 scale = Vector2(2.796875, 2.796875)
 
+[node name="healthbar" parent="enemis/enemy24" index="5" unique_id=1438948823]
+metadata/_edit_use_anchors_ = true
+
 [node name="Label" type="Label" parent="." unique_id=240282904]
-offset_left = 117.0
-offset_top = 260.0
-offset_right = 265.0
-offset_bottom = 283.0
-text = "W a r m  u p  a   l i t t l e ... "
+offset_left = 124.0
+offset_top = 257.0
+offset_right = 272.0
+offset_bottom = 288.0
+text = "W a r m  u p  a   l i t t l e ... 
+Get all the stones "
 label_settings = SubResource("LabelSettings_yw88p")
 
-[editable path="enemy6"]
-[editable path="enemy20"]
-[editable path="enemy21"]
-[editable path="enemy22"]
-[editable path="enemy23"]
-[editable path="enemy24"]
+[node name="Label2" type="Label" parent="." unique_id=563840033]
+offset_left = 943.0
+offset_top = 103.0
+offset_right = 973.0
+offset_bottom = 148.0
+text = "    16
+ stones
+needed"
+label_settings = SubResource("LabelSettings_yw88p")
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+
+[editable path="enemis/enemy6"]
+[editable path="enemis/enemy20"]
+[editable path="enemis/enemy21"]
+[editable path="enemis/enemy22"]
+[editable path="enemis/enemy23"]
+[editable path="enemis/enemy24"]

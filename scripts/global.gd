@@ -6,3 +6,5 @@ var talked_with_chicken:  bool = false
 var stone_recived_by_chicken = false
 
 var talked_with_zombie = false
+
+var talked_with_cow = false

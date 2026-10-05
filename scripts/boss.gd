@@ -20,7 +20,7 @@ func _physics_process(_delta: float) -> void:
 	
 	if player_chase and is_instance_valid(player):
 		var target: Vector2 = _player_target()
-		var direction: Vector2 = global_position.direction_to(target)
+		var direction: Vector2 = _self_center().direction_to(target)
 		velocity = direction * speed
 		move_and_slide()
 
@@ -33,10 +33,17 @@ func _physics_process(_delta: float) -> void:
 
 
 func _player_target() -> Vector2:
-	var player_sprite: Node2D = player.get_node_or_null("AnimatedSprite2D")
-	if player_sprite != null:
-		return player_sprite.global_position
+	var player_body: Node2D = player.get_node_or_null("CollisionShape2D")
+	if player_body != null:
+		return player_body.global_position
 	return player.global_position
+
+
+func _self_center() -> Vector2:
+	var body: Node2D = get_node_or_null("CollisionShape2D")
+	if body != null:
+		return body.global_position
+	return global_position
 
 
 func _on_detection_area_body_entered(body: Node2D) -> void:

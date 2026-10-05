@@ -8,6 +8,7 @@ var attack_ip = false
 
 const speed = 100
 
+var cow_in_range = false
 var chicken_in_range = false
 var zombie_in_range = false
 
@@ -31,12 +32,17 @@ func _physics_process(_delta: float) -> void:
 	if zombie_in_range == true:
 		if Input.is_action_just_pressed("interact"):
 			DialogueManager.show_dialogue_balloon(load("res://dialogue/zombie.dialogue"), "main")
+	if cow_in_range == true:
+		if Input.is_action_just_pressed("interact"):
+			DialogueManager.show_dialogue_balloon(load("res://dialogue/cow.dialogue"), "main")
+	
 	
 	if health <= 0:
-		player_alive = false
 		health = 0
-		print("player died")
-		get_tree().change_scene_to_file("res://scenes/you_died.tscn")
+		if player_alive:
+			player_alive = false
+			print("player died")
+			get_tree().change_scene_to_file("res://scenes/you_died.tscn")
 
 
 func _player_movement() -> void:
@@ -138,6 +144,8 @@ func _on_player_hitbox_body_entered(body: Node2D) -> void:
 		chicken_in_range = true
 	if body.is_in_group("zombie"):
 		zombie_in_range = true
+	if body.is_in_group("cow"):
+		cow_in_range = true
 		
  
 func _on_player_hitbox_body_exited(body: Node2D) -> void:
@@ -145,6 +153,10 @@ func _on_player_hitbox_body_exited(body: Node2D) -> void:
 		enemy_inattack_range = false
 	if body.is_in_group("chicken"):
 		chicken_in_range = false
+	if body.is_in_group("zombie"):
+		zombie_in_range = false
+	if body.is_in_group("cow"):
+		cow_in_range = false
 
 
 func enemy_attack() -> void:

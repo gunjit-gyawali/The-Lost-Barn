@@ -1,0 +1,70 @@
+~ main
+
+if Global.talked_with_cow == false:
+	Player: Cow!
+
+	Cow: Mooooo
+
+	Player: I finally found you!
+
+	Cow: Moooo...!
+
+	Player: Are you hurt?
+
+	Cow: Mooo...
+
+	Player: Don't worry. I'm here now.
+
+	Cow: Moooo!
+
+	Player: That monster kept you here all this time...
+
+	Cow: Mooo...
+
+	Player: It's over now.
+	Player: The One-Eyed Demon is defeated.
+
+	Cow: Moooo!
+
+	Player: You don't have to be afraid anymore.
+
+	Cow: Mooo... Mooo...
+
+	Player: Come on.
+	Player: Let's go home.
+
+	Cow: Moooo!
+
+	Player: I know.
+	Player: You missed the farm too.
+
+	Cow: Moooo!
+
+	Player: The chicken was worried about you.
+	Player: Everyone was.
+
+	Cow: Mooo...
+
+	Player: You really shouldn't have followed that strange light into the jungle.
+
+	Cow: Moooo...
+
+	Player: Yeah, yeah...
+	Player: I know you're sorry.
+
+	Cow: Mooo!
+
+	Player: Come on, girl.
+	Player: Our adventure is finally over.
+
+	Cow: Moooo!
+
+	Player: Let's go home.
+
+	Cow: Moooooo!
+	set Global.talked_with_cow = true
+	
+else:
+	Cow: Moooooo!
+
+=> END
