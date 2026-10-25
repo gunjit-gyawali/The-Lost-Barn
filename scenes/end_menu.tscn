@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bedkyvwute1wl"]
 
-[ext_resource type="Texture2D" uid="uid://dvu1a3eir6hjs" path="res://assets/Images/end_menu.png" id="1_c01dn"]
 [ext_resource type="Script" uid="uid://bmxawj0p54r4u" path="res://scripts/end_menu.gd" id="1_nsqeq"]
+[ext_resource type="Texture2D" uid="uid://b4w0g0it3xrya" path="res://assets/Screenshot_20261025_110126.png" id="2_f4hmx"]
 [ext_resource type="Texture2D" uid="uid://c4fjuwlw14261" path="res://assets/Images/Untitled design (8).png" id="2_fpl1s"]
 [ext_resource type="Texture2D" uid="uid://d07g64igey1qx" path="res://assets/Images/Mountain_image.png" id="3_pwu44"]
 [ext_resource type="FontFile" uid="uid://7w8wcwio3lw1" path="res://assets/Fonts/HollyBerryPop-PVxdZ.otf" id="4_wqo5a"]
@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://d0liex6l6kxql" path="res://assets/music/hover.mp3" id="10_x5d8p"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yw88p"]
-texture = ExtResource("1_c01dn")
+texture = ExtResource("2_f4hmx")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yw88p"]
 bg_color = Color(0, 0, 0, 0.2509804)
@@ -68,7 +68,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_yw88p")
 [node name="Panel8" type="Panel" parent="." unique_id=1386860745]
 offset_left = -178.0
 offset_top = -44.0
-offset_right = 1338.0
+offset_right = 1966.0
 offset_bottom = 1411.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_hlm2v")
 

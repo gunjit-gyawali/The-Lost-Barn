@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://c45sc4jpf2307"]
 
 [ext_resource type="Script" uid="uid://cs6cctv80mjlm" path="res://scripts/main_menu.gd" id="1_8ln24"]
-[ext_resource type="Texture2D" uid="uid://do2d54hodk68e" path="res://assets/Images/main_menu_bg.png" id="1_l6cm7"]
 [ext_resource type="FontFile" uid="uid://bp46lcglgopv3" path="res://assets/Fonts/HollyBerryPop-LVxvE.ttf" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://bikt2hrtrg3i4" path="res://Screenshot_20261025_105838.png" id="2_oa1go"]
 [ext_resource type="Texture2D" uid="uid://d07g64igey1qx" path="res://assets/Images/Mountain_image.png" id="3_bqqt6"]
 [ext_resource type="FontFile" uid="uid://iijd8ubopyay" path="res://assets/Fonts/GhostMortarDemo-0vXRR.ttf" id="4_wu84c"]
 [ext_resource type="AudioStream" uid="uid://d0liex6l6kxql" path="res://assets/music/hover.mp3" id="6_oa1go"]
 [ext_resource type="AudioStream" uid="uid://1kd74ecjvhqk" path="res://assets/music/pressed.mp3" id="7_tbmy8"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vue75"]
-texture = ExtResource("1_l6cm7")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ocqc"]
+texture = ExtResource("2_oa1go")
 
 [sub_resource type="Gradient" id="Gradient_l6cm7"]
 offsets = PackedFloat32Array(0.045, 0.215, 1)
@@ -61,11 +61,11 @@ offset_left = -14.0
 offset_top = -12.0
 offset_right = 1153.0
 offset_bottom = 649.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_vue75")
+theme_override_styles/panel = SubResource("StyleBoxTexture_5ocqc")
 
 [node name="Dark" type="Panel" parent="." unique_id=797170959]
 layout_mode = 0
-offset_left = 497.0
+offset_left = -555.0
 offset_top = -38.0
 offset_right = 1176.206
 offset_bottom = 678.0
@@ -73,10 +73,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
 
 [node name="Dark3" type="Panel" parent="." unique_id=782596974]
 layout_mode = 0
-offset_left = 982.0
-offset_top = -56.0
-offset_right = 1661.206
-offset_bottom = 660.0
+offset_left = 1108.9231
+offset_top = -327.728
+offset_right = 1926.3846
+offset_bottom = 1269.1067
 rotation = 0.9160916
 theme_override_styles/panel = SubResource("StyleBoxTexture_ekxnf")
 
